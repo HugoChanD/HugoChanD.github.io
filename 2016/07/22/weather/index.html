@@ -1,0 +1,646 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="树莓派," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="树莓派获取和风天气数据，然后通过百度语音合成，设置定时天气播报
+1.首先要申请和风天气api和百度语音合成api  和风天气：http://www.heweather.com    注册获取用户认证key  百度语音：http://yuyin.baidu.com/tts/    注册获取api key跟Secret Key">
+<meta property="og:type" content="article">
+<meta property="og:title" content="树莓派-定时天气播报">
+<meta property="og:url" content="http://www.hugospi.com/2016/07/22/weather/index.html">
+<meta property="og:site_name" content="Hugo Chan">
+<meta property="og:description" content="树莓派获取和风天气数据，然后通过百度语音合成，设置定时天气播报
+1.首先要申请和风天气api和百度语音合成api  和风天气：http://www.heweather.com    注册获取用户认证key  百度语音：http://yuyin.baidu.com/tts/    注册获取api key跟Secret Key">
+<meta property="og:updated_time" content="2016-07-22T04:49:13.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="树莓派-定时天气播报">
+<meta name="twitter:description" content="树莓派获取和风天气数据，然后通过百度语音合成，设置定时天气播报
+1.首先要申请和风天气api和百度语音合成api  和风天气：http://www.heweather.com    注册获取用户认证key  百度语音：http://yuyin.baidu.com/tts/    注册获取api key跟Secret Key">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.hugospi.com/2016/07/22/weather/"/>
+
+  <title> 树莓派-定时天气播报 | Hugo Chan </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hugo Chan</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                树莓派-定时天气播报
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-22T11:42:21+08:00" content="2016-07-22">
+              2016-07-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/树莓派/" itemprop="url" rel="index">
+                    <span itemprop="name">树莓派</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/22/weather/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/22/weather/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>树莓派获取和风天气数据，然后通过百度语音合成，设置定时天气播报</p>
+<p>1.首先要申请和风天气api和百度语音合成api<br>  和风天气：<a href="http://www.heweather.com" target="_blank" rel="external">http://www.heweather.com</a><br>    注册获取用户认证key<br>  百度语音：<a href="http://yuyin.baidu.com/tts/" target="_blank" rel="external">http://yuyin.baidu.com/tts/</a><br>    注册获取api key跟Secret Key<br><a id="more"></a><br>具体代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line">import os</div><div class="line">import urllib</div><div class="line">import urllib2,json</div><div class="line">from datetime import date</div><div class="line">from os import path</div><div class="line">import sys</div><div class="line">reload(sys)</div><div class="line">sys.setdefaultencoding(<span class="string">'utf-8'</span>)</div><div class="line"></div><div class="line">def get_city_id(cityname, search_<span class="built_in">type</span>=1):</div><div class="line">    ids = <span class="string">''</span></div><div class="line">    <span class="keyword">if</span> search_<span class="built_in">type</span> == 1:<span class="comment"># 查询城市ID</span></div><div class="line">        search = <span class="string">'allchina'</span></div><div class="line">        fn0 = <span class="string">'cityID'</span></div><div class="line">    <span class="keyword">elif</span> search_<span class="built_in">type</span> == 0:<span class="comment"># 查询景点ID</span></div><div class="line">        fn0 = <span class="string">'viewID'</span></div><div class="line">        search = <span class="string">'allattractions'</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="comment"># 代表type值出错</span></div><div class="line">        <span class="built_in">return</span> -1</div><div class="line">    fn = fn0+str(date.today())+<span class="string">'.txt'</span></div><div class="line">    try:</div><div class="line">        <span class="keyword">if</span> path.exists(fn):</div><div class="line">            fp = open(fn, <span class="string">'r'</span>)</div><div class="line">            context = fp.read()</div><div class="line">            fp.close()</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            fp = open(fn, <span class="string">'w'</span>)</div><div class="line">            url_city = <span class="string">'https://api.heweather.com/x3/citylist?search='</span>+search+<span class="string">'&amp;key=ae7baaf41f1b4b30b843f278869ab903'</span></div><div class="line">            req = urllib2.Request(url_city)</div><div class="line">            resp = urllib2.urlopen(req)</div><div class="line">            context = resp.read().decode(<span class="string">'utf-8'</span>)</div><div class="line">            <span class="comment"># print True</span></div><div class="line">            fp.write(context)</div><div class="line">            fp.close()</div><div class="line"></div><div class="line">        city_json = json.loads(context,encoding=<span class="string">'utf-8'</span>)</div><div class="line">        city_info = city_json[<span class="string">"city_info"</span>]</div><div class="line">        city_name = unicode(cityname, <span class="string">'utf-8'</span>)</div><div class="line">        <span class="comment"># print city_name</span></div><div class="line">        <span class="keyword">for</span> index, cities <span class="keyword">in</span> enumerate(city_info):</div><div class="line">            <span class="keyword">if</span> city_name <span class="keyword">in</span> cities[<span class="string">'city'</span>]:</div><div class="line">                <span class="built_in">print</span> cities[<span class="string">'city'</span>]</div><div class="line">                ids = cities[<span class="string">'id'</span>]</div><div class="line">                <span class="built_in">break</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="comment"># 之后将会返回-1</span></div><div class="line">            <span class="built_in">print</span> <span class="string">'您输入的城市或景点不存在，请反馈给管理员'</span></div><div class="line">    except IOError, e:</div><div class="line">        <span class="built_in">print</span> e</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        pass</div><div class="line">    <span class="built_in">return</span> ids</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#返回和风天气数据</span></div><div class="line">def get_city_weather(index, search_<span class="built_in">type</span>=1):</div><div class="line"></div><div class="line">    <span class="keyword">if</span> search_<span class="built_in">type</span> == 1:</div><div class="line">        search = <span class="string">'weather'</span></div><div class="line">    <span class="keyword">elif</span> search_<span class="built_in">type</span> == 0:</div><div class="line">        search = <span class="string">'attractions'</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="built_in">return</span> -1</div><div class="line">    url_weather = <span class="string">'https://api.heweather.com/x3/'</span>+search+<span class="string">'?cityid='</span>+index+<span class="string">'&amp;key=和风天气key'</span></div><div class="line">    req = urllib2.Request(url_weather)</div><div class="line">    resp = urllib2.urlopen(req)</div><div class="line">    context = resp.read()</div><div class="line">    weather_json = json.loads(context, encoding=<span class="string">'utf-8'</span>)</div><div class="line">    fp = open(<span class="string">"/home/pi/python/tianqi/test.txt"</span>, <span class="string">'w'</span>)</div><div class="line">    fp.write(context)</div><div class="line">    fp.close()</div><div class="line">    <span class="keyword">if</span> search_<span class="built_in">type</span> == 1:</div><div class="line">        weather = weather_json[<span class="string">"HeWeather data service 3.0"</span>][0][<span class="string">'daily_forecast'</span>][0]</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        weather = weather_json</div><div class="line">    <span class="built_in">return</span> weather</div><div class="line"></div><div class="line"><span class="comment">#获取百度语音token</span></div><div class="line">def get_token():</div><div class="line">    api_key = <span class="string">"百度API Key"</span></div><div class="line">    sec_key = <span class="string">"百度Secret Key"</span></div><div class="line">    url = url=<span class="string">"https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&amp;client_id="</span>+api_key+<span class="string">"&amp;client_secret="</span>+sec_key</div><div class="line">    req = urllib2.Request(url)</div><div class="line">    resp = urllib2.urlopen(req)</div><div class="line">    context = resp.read().decode(<span class="string">'utf-8'</span>)</div><div class="line">    <span class="built_in">return</span> json.loads(context)[<span class="string">'access_token'</span>]</div><div class="line"></div><div class="line"><span class="comment">#获取需要的数据</span></div><div class="line">def get_wat():</div><div class="line">    city_id = <span class="string">"CN101280101"</span>  <span class="comment">#广州天气代码   </span></div><div class="line">    city_weather = get_city_weather(city_id)</div><div class="line">    a= city_weather[<span class="string">'tmp'</span>][<span class="string">'max'</span>]</div><div class="line">    b= city_weather[<span class="string">'tmp'</span>][<span class="string">'min'</span>]</div><div class="line">    c= city_weather[<span class="string">'cond'</span>][<span class="string">'txt_d'</span>]</div><div class="line">    d= city_weather[<span class="string">'cond'</span>][<span class="string">'txt_n'</span>]</div><div class="line">    e= city_weather[<span class="string">'date'</span>]</div><div class="line">    <span class="built_in">return</span> <span class="string">"天气预报  今天是 &#123;&#125;   最高温度&#123;&#125; 最低温度&#123;&#125; 日间天气&#123;&#125; 夜间天气&#123;&#125;"</span>.format(e,a,b,c,d)</div><div class="line"></div><div class="line">token=get_token()</div><div class="line">weather=get_wat() </div><div class="line"></div><div class="line"><span class="comment">#tts</span></div><div class="line">url = <span class="string">"http://tsn.baidu.com/text2audio?tex="</span>+weather+<span class="string">"&amp;lan=zh&amp;per=0&amp;pit=1&amp;spd=4&amp;cuid=b827ebcac3a2&amp;ctp=1&amp;tok="</span>+token</div><div class="line"></div><div class="line"><span class="comment">#播放</span></div><div class="line">try:</div><div class="line">    os.system(<span class="string">'/usr/bin/mplayer "%s"'</span> %(url))</div><div class="line">except Exception as e:</div><div class="line">    <span class="built_in">print</span>(<span class="string">'Exception'</span>,e)</div></pre></td></tr></table></figure>
+<p>最后通过crontab定时启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">30 7 * * * sudo python /home/pi/python/weather.py</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/树莓派/" rel="tag">#树莓派</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/21/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/22/pythonweibo/" rel="prev" title="树莓派－python模拟登陆weibo定时发送微博">
+                树莓派－python模拟登陆weibo定时发送微博 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Hugo Chan" />
+          <p class="site-author-name" itemprop="name">Hugo Chan</p>
+          <p class="site-description motion-element" itemprop="description">no one</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hugo Chan</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hugochan';
+      var disqus_identifier = '2016/07/22/weather/';
+      var disqus_title = "树莓派-定时天气播报";
+      var disqus_url = 'http://www.hugospi.com/2016/07/22/weather/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
