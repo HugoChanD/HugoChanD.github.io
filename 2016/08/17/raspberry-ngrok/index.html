@@ -85,21 +85,21 @@
 
 
 <meta name="description" content="家里的小水管用的是联通的宽带，前些日子升级光纤之后发现ip地址变成了10...*，内网…打电话给客服要求更换公网ip，估计是ipv4地址资源匮乏最终投诉无果，最后只能通过ngrok进行内网穿透
-ngrok项目地址：https://github.com/inconshreveable/ngrok这里自行编译搭建服务器，这里我直接使用别人搭建好的服务
-国内服务器：ngrok.ccittun.comna">
+ngrok项目地址：https://github.com/inconshreveable/ngrok可以自行编译搭建服务器，这里我直接使用搭建好的服务
+国内服务器：ngrok.ccittun.comnata">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树莓派－利用ngrok进行内网穿透">
 <meta property="og:url" content="http://www.hugospi.com/2016/08/17/raspberry-ngrok/index.html">
 <meta property="og:site_name" content="Hugo Chan">
 <meta property="og:description" content="家里的小水管用的是联通的宽带，前些日子升级光纤之后发现ip地址变成了10...*，内网…打电话给客服要求更换公网ip，估计是ipv4地址资源匮乏最终投诉无果，最后只能通过ngrok进行内网穿透
-ngrok项目地址：https://github.com/inconshreveable/ngrok这里自行编译搭建服务器，这里我直接使用别人搭建好的服务
-国内服务器：ngrok.ccittun.comna">
-<meta property="og:updated_time" content="2016-08-17T03:37:23.000Z">
+ngrok项目地址：https://github.com/inconshreveable/ngrok可以自行编译搭建服务器，这里我直接使用搭建好的服务
+国内服务器：ngrok.ccittun.comnata">
+<meta property="og:updated_time" content="2016-08-17T03:39:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树莓派－利用ngrok进行内网穿透">
 <meta name="twitter:description" content="家里的小水管用的是联通的宽带，前些日子升级光纤之后发现ip地址变成了10...*，内网…打电话给客服要求更换公网ip，估计是ipv4地址资源匮乏最终投诉无果，最后只能通过ngrok进行内网穿透
-ngrok项目地址：https://github.com/inconshreveable/ngrok这里自行编译搭建服务器，这里我直接使用别人搭建好的服务
-国内服务器：ngrok.ccittun.comna">
+ngrok项目地址：https://github.com/inconshreveable/ngrok可以自行编译搭建服务器，这里我直接使用搭建好的服务
+国内服务器：ngrok.ccittun.comnata">
 
 
 
@@ -329,7 +329,7 @@ ngrok项目地址：https://github.com/inconshreveable/ngrok这里自行编译�
 
       
         <p>家里的小水管用的是联通的宽带，前些日子升级光纤之后发现ip地址变成了10.<em>.</em>.*，内网…<br>打电话给客服要求更换公网ip，估计是ipv4地址资源匮乏最终投诉无果，最后只能通过ngrok<br>进行内网穿透</p>
-<p>ngrok项目地址：<a href="https://github.com/inconshreveable/ngrok" target="_blank" rel="external">https://github.com/inconshreveable/ngrok</a><br>这里自行编译搭建服务器，这里我直接使用别人搭建好的服务</p>
+<p>ngrok项目地址：<a href="https://github.com/inconshreveable/ngrok" target="_blank" rel="external">https://github.com/inconshreveable/ngrok</a><br>可以自行编译搭建服务器，这里我直接使用搭建好的服务</p>
 <p>国内服务器：<br>ngrok.cc<br>ittun.com<br>natapp.cn<br><a id="more"></a><br>我的树莓派不知道什么原因无法运行ngrok客户端，自行编译也不行，运行没有任何提示<br>无奈只能选择php客户端<br><a href="https://github.com/dosgo/ngrok-php" target="_blank" rel="external">https://github.com/dosgo/ngrok-php</a></p>
 <p>修改服务器跟端口<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$seraddr</span> = <span class="string">'ittun.com'</span>; //ngrok服务器地址</div><div class="line"><span class="variable">$port</span> = 4443; //端口</div><div class="line"><span class="variable">$is_verify_peer</span> = <span class="literal">false</span>; //是否校验证书</div><div class="line">//你要映射到通道</div><div class="line"><span class="variable">$Tunnels</span> = array(</div><div class="line">    array(</div><div class="line">        <span class="string">'protocol'</span> =&gt; <span class="string">'http'</span>,</div><div class="line">        <span class="string">'hostname'</span> =&gt; <span class="string">'www.xxx.com'</span>,</div><div class="line">        <span class="string">'subdomain'</span> =&gt; <span class="string">''</span>,</div><div class="line">        <span class="string">'rport'</span> =&gt; 0,</div><div class="line">        <span class="string">'lhost'</span> =&gt; <span class="string">'127.0.0.1'</span>,</div><div class="line">        <span class="string">'lport'</span> =&gt; 80</div><div class="line">    ),</div><div class="line">    array(</div><div class="line">        <span class="string">'protocol'</span> =&gt; <span class="string">'http'</span>,</div><div class="line">        <span class="string">'hostname'</span> =&gt; <span class="string">''</span>,</div><div class="line">        <span class="string">'subdomain'</span> =&gt; <span class="string">'xxx'</span>,</div><div class="line">        <span class="string">'rport'</span> =&gt; 0,</div><div class="line">        <span class="string">'lhost'</span> =&gt; <span class="string">'127.0.0.1'</span>,</div><div class="line">        <span class="string">'lport'</span> =&gt; 80</div><div class="line">    ),</div><div class="line">    array(</div><div class="line">        <span class="string">'protocol'</span> =&gt; <span class="string">'tcp'</span>,</div><div class="line">        <span class="string">'hostname'</span> =&gt; <span class="string">''</span>,</div><div class="line">        <span class="string">'subdomain'</span> =&gt; <span class="string">''</span>,</div><div class="line">        <span class="string">'rport'</span> =&gt; 57715,</div><div class="line">        <span class="string">'lhost'</span> =&gt; <span class="string">'127.0.0.1'</span>,</div><div class="line">        <span class="string">'lport'</span> =&gt; 22</div><div class="line">    ),</div><div class="line">);</div></pre></td></tr></table></figure></p>
 <p>直接运行就可以</p>
