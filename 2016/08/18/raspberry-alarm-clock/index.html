@@ -84,28 +84,22 @@
 
 
 
-<meta name="description" content="树莓派自带的vi编辑器太难用了，下面纪录更新raspbian系统vi的更新
-1.删除系统原来的vi编辑器1sudo apt-get remove vim-common
-2.安装新的vi1sudo apt-get install vim
-3.自定义vi编辑/etc/vim/vimrc文件，添加以下内容
-123456#显示行号set nu#语法高亮syntax on #tab 退四格set tabst">
+<meta name="description" content="节假日闹钟，其实就是通过返回节假日数据定时播放音乐
+1.注册帐号获取api认证信息节假日数据api:https://www.showapi.com/api/lookPoint/894
+返回数据实例：12345678910111213141516&amp;#123;    &quot;showapi_res_code&quot;: 0,    &quot;showapi_res_error&quot;: &quot;&quot;,    &quot;showapi_res_b">
 <meta property="og:type" content="article">
-<meta property="og:title" content="树莓派－替换更新raspbian系统vim">
-<meta property="og:url" content="http://www.hugospi.com/2016/07/27/raspberryvim/index.html">
+<meta property="og:title" content="树莓派－节假日闹钟">
+<meta property="og:url" content="http://www.hugospi.com/2016/08/18/raspberry-alarm-clock/index.html">
 <meta property="og:site_name" content="Hugo Chan">
-<meta property="og:description" content="树莓派自带的vi编辑器太难用了，下面纪录更新raspbian系统vi的更新
-1.删除系统原来的vi编辑器1sudo apt-get remove vim-common
-2.安装新的vi1sudo apt-get install vim
-3.自定义vi编辑/etc/vim/vimrc文件，添加以下内容
-123456#显示行号set nu#语法高亮syntax on #tab 退四格set tabst">
-<meta property="og:updated_time" content="2016-07-27T02:58:56.000Z">
+<meta property="og:description" content="节假日闹钟，其实就是通过返回节假日数据定时播放音乐
+1.注册帐号获取api认证信息节假日数据api:https://www.showapi.com/api/lookPoint/894
+返回数据实例：12345678910111213141516&amp;#123;    &quot;showapi_res_code&quot;: 0,    &quot;showapi_res_error&quot;: &quot;&quot;,    &quot;showapi_res_b">
+<meta property="og:updated_time" content="2016-08-18T02:30:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="树莓派－替换更新raspbian系统vim">
-<meta name="twitter:description" content="树莓派自带的vi编辑器太难用了，下面纪录更新raspbian系统vi的更新
-1.删除系统原来的vi编辑器1sudo apt-get remove vim-common
-2.安装新的vi1sudo apt-get install vim
-3.自定义vi编辑/etc/vim/vimrc文件，添加以下内容
-123456#显示行号set nu#语法高亮syntax on #tab 退四格set tabst">
+<meta name="twitter:title" content="树莓派－节假日闹钟">
+<meta name="twitter:description" content="节假日闹钟，其实就是通过返回节假日数据定时播放音乐
+1.注册帐号获取api认证信息节假日数据api:https://www.showapi.com/api/lookPoint/894
+返回数据实例：12345678910111213141516&amp;#123;    &quot;showapi_res_code&quot;: 0,    &quot;showapi_res_error&quot;: &quot;&quot;,    &quot;showapi_res_b">
 
 
 
@@ -126,9 +120,9 @@
 
 
 
-  <link rel="canonical" href="http://www.hugospi.com/2016/07/27/raspberryvim/"/>
+  <link rel="canonical" href="http://www.hugospi.com/2016/08/18/raspberry-alarm-clock/"/>
 
-  <title> 树莓派－替换更新raspbian系统vim | Hugo Chan </title>
+  <title> 树莓派－节假日闹钟 | Hugo Chan </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -268,7 +262,7 @@
             
             
               
-                树莓派－替换更新raspbian系统vim
+                树莓派－节假日闹钟
               
             
           </h1>
@@ -280,8 +274,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-27T10:52:41+08:00" content="2016-07-27">
-              2016-07-27
+            <time itemprop="dateCreated" datetime="2016-08-18T09:36:07+08:00" content="2016-08-18">
+              2016-08-18
             </time>
           </span>
 
@@ -310,8 +304,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/27/raspberryvim/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/27/raspberryvim/" itemprop="commentsCount"></span>
+                <a href="/2016/08/18/raspberry-alarm-clock/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/18/raspberry-alarm-clock/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -334,11 +328,17 @@
       
 
       
-        <p>树莓派自带的vi编辑器太难用了，下面纪录更新raspbian系统vi的更新</p>
-<p>1.删除系统原来的vi编辑器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get remove vim-common</div></pre></td></tr></table></figure></p>
-<p>2.安装新的vi<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install vim</div></pre></td></tr></table></figure></p>
-<p>3.自定义vi<br>编辑/etc/vim/vimrc文件，添加以下内容</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#显示行号</span></div><div class="line"><span class="built_in">set</span> nu</div><div class="line"><span class="comment">#语法高亮</span></div><div class="line">syntax on </div><div class="line"><span class="comment">#tab 退四格</span></div><div class="line"><span class="built_in">set</span> tabstop=4</div></pre></td></tr></table></figure>
+        <p>节假日闹钟，其实就是通过返回节假日数据定时播放音乐</p>
+<p>1.注册帐号获取api认证信息<br>节假日数据api:<a href="https://www.showapi.com/api/lookPoint/894" target="_blank" rel="external">https://www.showapi.com/api/lookPoint/894</a></p>
+<p>返回数据实例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"showapi_res_code"</span>: 0,</div><div class="line">    <span class="string">"showapi_res_error"</span>: <span class="string">""</span>,</div><div class="line">    <span class="string">"showapi_res_body"</span>: &#123;</div><div class="line">        <span class="string">"begin"</span>: <span class="string">"20161001"</span>,</div><div class="line">        <span class="string">"cn"</span>: <span class="string">"周六"</span>,</div><div class="line">        <span class="string">"day"</span>: <span class="string">"20161001"</span>,</div><div class="line">        <span class="string">"en"</span>: <span class="string">"Saturday"</span>,</div><div class="line">        <span class="string">"end"</span>: <span class="string">"20161007"</span>,</div><div class="line">        <span class="string">"holiday"</span>: <span class="string">"国庆节"</span>,</div><div class="line">        <span class="string">"holiday_remark"</span>: <span class="string">"10月1日至7日放假调休，共7天。10月8日（星期六）、10月9日（星期日）上班。"</span>,</div><div class="line">        <span class="string">"ret_code"</span>: 0,</div><div class="line">        <span class="string">"type"</span>: <span class="string">"3"</span>,</div><div class="line">        <span class="string">"weekDay"</span>: 6</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>这里我只用到type字段</p>
+<p>名称    类型    示例值       描述<br>day    String    20161001    查询的日期<br>weekDay    Number    6            星期几的数字<br>cn    String    周六            星期几的中文名<br>en    String    Saturday    星期几的英文名<br>holiday    String    国庆节            节日名称，工作日时显示“无”，周末时显示“周末”，节日时显示节日名称<br>holiday_remark    String      10月1日至7日放假调休，共7天。10月8日（星期六）、10月9日（星期日）上班。    节日备注<br>type    String    1            1为工作日，2为周末，3为节假日<br>begin    String    20161001    节日或周末开始时间，如果是工作日，此字段为空串<br>end    String    20161007    节日或周末结束时间，如果是工作日，此字段为空串</p>
+<p>2.安装相关依赖</p>
+<p>mpg123<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install mpg123</div></pre></td></tr></table></figure></p>
+<p>新建music文件夹存放音乐,音乐文件我用music1.mp3,music2.mp3格式命名，后面生成随机数随机播放音乐文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir music</div><div class="line">touch alarm-clock.py <span class="comment">#新建python文件</span></div></pre></td></tr></table></figure></p>
+<p>python文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">import os</div><div class="line">import sys</div><div class="line">from subprocess import call</div><div class="line">from urllib import    request, parse</div><div class="line">import json</div><div class="line">import random</div><div class="line"></div><div class="line"><span class="comment">#节假日数据</span></div><div class="line">def jjrdate():</div><div class="line">    showapi_appid=<span class="string">"apiid"</span>  <span class="comment">#appid</span></div><div class="line">    showapi_sign=<span class="string">"api_sign"</span>   <span class="comment">#api_sign</span></div><div class="line">    url=<span class="string">"http://route.showapi.com/894-1"</span></div><div class="line">    send_data = parse.urlencode([</div><div class="line">    (<span class="string">'showapi_appid'</span>, showapi_appid)</div><div class="line">    ,(<span class="string">'showapi_sign'</span>, showapi_sign)</div><div class="line">     ,(<span class="string">'day'</span>, <span class="string">""</span>)</div><div class="line">     </div><div class="line">  ])</div><div class="line"> </div><div class="line">    req = request.Request(url)</div><div class="line">    with request.urlopen(req, data=send_data.encode(<span class="string">'utf-8'</span>)) as f:</div><div class="line">      str_res= f.read().decode(<span class="string">'utf-8'</span>)</div><div class="line">      svb_res=json.loads(str_res)</div><div class="line">      date=svb_res[<span class="string">"showapi_res_body"</span>]</div><div class="line">    <span class="built_in">return</span> date</div><div class="line"></div><div class="line"><span class="comment">#闹钟</span></div><div class="line">def aclock():</div><div class="line">        </div><div class="line">    jdate = jjrdate()</div><div class="line">    gzr = int(jdate[<span class="string">"type"</span>])</div><div class="line"></div><div class="line"><span class="comment">#判断是否工作日</span></div><div class="line">    <span class="keyword">if</span> gzr == 1:</div><div class="line">        <span class="built_in">return</span>_code = call(<span class="string">"/usr/bin/mpg123 ./music/music"</span> + str(random.randint(1,4)) + <span class="string">".mp3 "</span>, shell=True)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>: </div><div class="line">    aclock()</div></pre></td></tr></table></figure></p>
+<p>添加crontab 每天7:20执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">20 7 * * * sudo python3 /home/pi/python/alarm-clock.py</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -370,17 +370,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/26/raspberry-mac/" rel="next" title="树莓派－mac系统下安装raspbian系统到sd卡">
-                <i class="fa fa-chevron-left"></i> 树莓派－mac系统下安装raspbian系统到sd卡
+              <a href="/2016/08/17/raspberry-ngrok/" rel="next" title="树莓派－利用ngrok进行内网穿透">
+                <i class="fa fa-chevron-left"></i> 树莓派－利用ngrok进行内网穿透
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/27/raspberry-python/" rel="prev" title="树莓派－编译安装新版本的python">
-                树莓派－编译安装新版本的python <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -406,8 +402,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/27/raspberryvim/"
-           data-title="树莓派－替换更新raspbian系统vim" data-url="http://www.hugospi.com/2016/07/27/raspberryvim/">
+      <div class="ds-thread" data-thread-key="2016/08/18/raspberry-alarm-clock/"
+           data-title="树莓派－节假日闹钟" data-url="http://www.hugospi.com/2016/08/18/raspberry-alarm-clock/">
       </div>
     
   </div>
