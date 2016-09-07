@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="Hugo Chan">
 <meta property="og:description" content="很久没玩微博，最近入手树莓派3，对着网上已有的项目实施，这次是通过python登陆微博定时发送微博内容，对于24*7工作的树莓派来说再合适不过了。
 项目地址：https://github.com/HugoChanD/sinaWeibo.git">
-<meta property="og:updated_time" content="2016-07-22T07:36:28.000Z">
+<meta property="og:updated_time" content="2016-09-07T02:09:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树莓派－python模拟登陆weibo定时发送微博">
 <meta name="twitter:description" content="很久没玩微博，最近入手树莓派3，对着网上已有的项目实施，这次是通过python登陆微博定时发送微博内容，对于24*7工作的树莓派来说再合适不过了。
@@ -338,6 +338,18 @@
 <p>定义微博内容<br>TextFactory.py文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">spiders = [</div><div class="line">      Spider(miaopai.HOME_URL, miaopai.MiaopaParser()),</div><div class="line">      Spider(cnbeta.HOME_URL, cnbeta.CnbetaParser()),</div><div class="line">      Spider(cnblog.HOME_URL, cnblog.CnblogParser()),</div><div class="line">      Spider(techweb.HOME_URL, techweb.TechwebParser()),</div><div class="line">      Spider(tuicool.HOME_URL, tuicool.TuicoolParser()),</div><div class="line">      Spider(miaopai.HOME_URL, miaopai.MiaopaParser()),</div><div class="line">]</div><div class="line"></div><div class="line">currentIndex = 0</div><div class="line">count = len(spiders)</div><div class="line"></div><div class="line">def getText():</div><div class="line">      spider = nextSpider()</div><div class="line">      text = spider.getAMessage()</div><div class="line">      <span class="built_in">return</span> text</div><div class="line"></div><div class="line">def nextSpider():</div><div class="line">      global currentIndex</div><div class="line">      spider = spiders[currentIndex]</div><div class="line">      currentIndex = (currentIndex + 1) % count</div><div class="line">      <span class="built_in">return</span> spider</div></pre></td></tr></table></figure></p>
 <p>最后添加开机自动启动python文件就可以了</p>
 <p>引用原作者链接：<a href="http://blog.5long.me/2015/code-login-sina-weibo-update-weibo/" target="_blank" rel="external">http://blog.5long.me/2015/code-login-sina-weibo-update-weibo/</a></p>
+<p>－－－－－－－－－－2016-09-07更新分界线－－－－－－－－－－<br>附上另外一个weibo客户端<br>项目地址：<a href="https://github.com/zhuzhezhe/weibobash" target="_blank" rel="external">https://github.com/zhuzhezhe/weibobash</a></p>
+<p>直接安装 $pip install weibobash</p>
+<p>使用</p>
+<p>务必首先运行$weibobash -u输入用户名和密码以登陆</p>
+<p>命令下使用$weibobash &lt;参数&gt;运行相应功能。</p>
+<p>——–weibobash使用帮助——–</p>
+<p>-h&lt;–help&gt;: 显示帮助信息</p>
+<p>-u&lt;–user&gt;: 输入用户名和密码</p>
+<p>-n&lt;–new&gt;: 显示20条最新微博</p>
+<p>-a&lt;–add&gt;: 发布一条微博</p>
+<p>内容可以自定义，这里我使用的是定时天气预报跟节假日信息跟树莓派的cpu温度等信息</p>
+<p>python直接调用os.system weibobash -a  内容，crontab添加定时发布</p>
 
       
     </div>
