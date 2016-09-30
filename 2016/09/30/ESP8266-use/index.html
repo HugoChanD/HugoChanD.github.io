@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="ESP8266 NodeMCU," />
 
 
 
@@ -84,15 +84,22 @@
 
 
 
-<meta name="description" content="no one">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hugo Chan">
-<meta property="og:url" content="http://www.hugospi.com/categories/树莓派/index.html">
+<meta name="description" content="1.使用 NodeMCU 必须先安装 CP210x 驱动:https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx
+2.使用 esptool.py更新固件https://github.com/themadinventor/esptool
+固件下载地址：https://github.com/nodemcu/nod">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ESP8266-NodeMCU 使用相关">
+<meta property="og:url" content="http://www.hugospi.com/2016/09/30/ESP8266-use/index.html">
 <meta property="og:site_name" content="Hugo Chan">
-<meta property="og:description" content="no one">
+<meta property="og:description" content="1.使用 NodeMCU 必须先安装 CP210x 驱动:https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx
+2.使用 esptool.py更新固件https://github.com/themadinventor/esptool
+固件下载地址：https://github.com/nodemcu/nod">
+<meta property="og:updated_time" content="2016-09-30T03:33:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hugo Chan">
-<meta name="twitter:description" content="no one">
+<meta name="twitter:title" content="ESP8266-NodeMCU 使用相关">
+<meta name="twitter:description" content="1.使用 NodeMCU 必须先安装 CP210x 驱动:https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx
+2.使用 esptool.py更新固件https://github.com/themadinventor/esptool
+固件下载地址：https://github.com/nodemcu/nod">
 
 
 
@@ -113,9 +120,9 @@
 
 
 
-  <link rel="canonical" href="http://www.hugospi.com/categories/树莓派/"/>
+  <link rel="canonical" href="http://www.hugospi.com/2016/09/30/ESP8266-use/"/>
 
-  <title> 分类: 树莓派 | Hugo Chan </title>
+  <title> ESP8266-NodeMCU 使用相关 | Hugo Chan </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,7 +143,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right  ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -234,303 +241,155 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        树莓派
-        <small>分类</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/15/raspberry-DHT11/" itemprop="url">
-              
-                <span itemprop="name">树莓派－接入DHT11温湿度传感器</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-15T22:50:49+08:00"
-              content="2016-09-15" >
-          09-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/18/raspberry-alarm-clock/" itemprop="url">
-              
-                <span itemprop="name">树莓派－节假日闹钟</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-18T09:36:07+08:00"
-              content="2016-08-18" >
-          08-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/17/raspberry-ngrok/" itemprop="url">
-              
-                <span itemprop="name">树莓派－利用ngrok进行内网穿透</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-17T09:30:35+08:00"
-              content="2016-08-17" >
-          08-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/07/29/raspberry-owncloud/" itemprop="url">
-              
-                <span itemprop="name">树莓派－利用owncloud搭建个人私有云</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-29T14:52:09+08:00"
-              content="2016-07-29" >
-          07-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/07/27/raspberry-airplay/" itemprop="url">
-              
-                <span itemprop="name">树莓派－用shairport-sync搭建airplay播放器</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-27T23:43:04+08:00"
-              content="2016-07-27" >
-          07-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/07/27/raspberry-auto/" itemprop="url">
-              
-                <span itemprop="name">树莓派－切换usb声卡</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-27T20:13:21+08:00"
-              content="2016-07-27" >
-          07-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/07/27/raspberry-samba/" itemprop="url">
-              
-                <span itemprop="name">树莓派－搭建家庭nas服务</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-27T13:07:40+08:00"
-              content="2016-07-27" >
-          07-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/07/27/raspberry-update/" itemprop="url">
-              
-                <span itemprop="name">树莓派－配置使用国内就像软件源更新</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-27T12:47:25+08:00"
-              content="2016-07-27" >
-          07-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/07/27/raspberry-python/" itemprop="url">
-              
-                <span itemprop="name">树莓派－编译安装新版本的python</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-27T11:18:21+08:00"
-              content="2016-07-27" >
-          07-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/07/27/raspberryvim/" itemprop="url">
-              
-                <span itemprop="name">树莓派－替换更新raspbian系统vim</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-27T10:52:41+08:00"
-              content="2016-07-27" >
-          07-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </section>
 
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/categories/树莓派/page/2/">2</a><a class="extend next" rel="next" href="/categories/树莓派/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ESP8266-NodeMCU 使用相关
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-30T10:34:28+08:00" content="2016-09-30">
+              2016-09-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ESP8266-NodeMCU/" itemprop="url" rel="index">
+                    <span itemprop="name">ESP8266 NodeMCU</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/30/ESP8266-use/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/30/ESP8266-use/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
 
 
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>1.使用 NodeMCU 必须先安装 CP210x 驱动:<br><a href="https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx" target="_blank" rel="external">https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx</a></p>
+<p>2.使用 esptool.py更新固件<br><a href="https://github.com/themadinventor/esptool" target="_blank" rel="external">https://github.com/themadinventor/esptool</a></p>
+<p>固件下载地址：<a href="https://github.com/nodemcu/nodemcu-firmware/releases" target="_blank" rel="external">https://github.com/nodemcu/nodemcu-firmware/releases</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./esptool.py --port /dev/ttyUSB1 write_flash  bootloader.bin</div></pre></td></tr></table></figure>
+<p>3.使用ESPlorer上传代码<br><a href="http://esp8266.ru/esplorer/" target="_blank" rel="external">http://esp8266.ru/esplorer/</a><br>使用ESPlorer前要先安装java，支持各大系统平台环境</p>
+<p>启动ESPlorer设定通讯为9600 按下 Open 与 NodeMCU 连接</p>
+<p>NodeMCU api说明：<a href="https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_c" target="_blank" rel="external">https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_c</a></p>
+<p>init.lua这个文件就相当于以前我们DOS系统里的autoexec.bat文件和Linux系统中的rc.local文件，即开机运行的意思</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ESP8266-NodeMCU/" rel="tag">#ESP8266 NodeMCU</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/15/raspberry-DHT11/" rel="next" title="树莓派－接入DHT11温湿度传感器">
+                <i class="fa fa-chevron-left"></i> 树莓派－接入DHT11温湿度传感器
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -538,6 +397,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/30/ESP8266-use/"
+           data-title="ESP8266-NodeMCU 使用相关" data-url="http://www.hugospi.com/2016/09/30/ESP8266-use/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -557,8 +424,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -608,6 +484,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -703,6 +590,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
