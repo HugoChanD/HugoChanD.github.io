@@ -258,6 +258,142 @@
             
               
                 
+                <a class="post-title-link" href="/2016/12/14/VPS-Shadowsocks/" itemprop="url">
+                  自建梯子-搬瓦工搭建Shadowsocks服务加速(转载)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-14T11:18:27+08:00" content="2016-12-14">
+              2016-12-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/VPS/" itemprop="url" rel="index">
+                    <span itemprop="name">VPS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/12/14/VPS-Shadowsocks/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/14/VPS-Shadowsocks/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>购买vps及其ssh登录</p>
+<p>1.安装Shadowsocks<br>    一键安装shadowsocks-go版本<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-go.sh</div><div class="line">chmod +x shadowsocks-go.sh</div><div class="line">./shadowsocks-go.sh 2&gt;&amp;1 | tee shadowsocks-go.log</div></pre></td></tr></table></figure></p>
+<p>客户端软件:<br>    <a href="https://github.com/shadowsocks" target="_blank" rel="external">https://github.com/shadowsocks</a> (对应版本下载)</p>
+<p>3.Shadowsocks优化<br>    安装net-speeder 一键安装脚本</p>
+<pre><code>ubuntu:
+执行如下 shell 命令即可，不需要多余操作，会自动添加开机启动项。
+搬瓦工 VPS 亲测有效。
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 步骤1：</span></div><div class="line">wget --no-check-certificate https://raw.githubusercontent.com/tennfy/debian_netspeeder_tennfy/master/debian_netspeeder_tennfy.sh</div><div class="line"></div><div class="line"><span class="comment"># 步骤2：</span></div><div class="line">chmod a+x debian_netspeeder_tennfy.sh</div><div class="line"></div><div class="line"><span class="comment"># 步骤3：</span></div><div class="line">bash debian_netspeeder_tennfy.sh</div></pre></td></tr></table></figure>
+
+centos:
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">wget --no-check-certificate https://gist.github.com/LazyZhu/dc3f2f84c336a08fd6a5/rawd8aa4bcf955409e28a262ccf52921a65fe49da99/net_speeder_lazyinstall.sh</div><div class="line"></div><div class="line">sh net_speeder_lazyinstall.sh</div></pre></td></tr></table></figure>
+
+centos手动安装
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#先安装依赖</span></div><div class="line">wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm</div><div class="line">rpm -ivh epel-release-X-Y.noarch.rpm</div><div class="line">yum install libnet libpcap libnet-devel libpcap-devel</div><div class="line"></div><div class="line"><span class="comment">#安装主程序</span></div><div class="line">git <span class="built_in">clone</span> https://github.com/snooda/net-speeder</div><div class="line"><span class="built_in">cd</span> /var/net-speeder <span class="comment">#这一步是进去下载的文件夹</span></div><div class="line">sudo chmod +x ./build.sh</div><div class="line">sudo bash ./build.sh -DCOOKED</div><div class="line">sudo cp ./net_speeder /usr/<span class="built_in">local</span>/bin/</div><div class="line"></div><div class="line"><span class="comment">#开机启动</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"nohup /usr/local/bin/net_speeder venet0 "</span>ip<span class="string">" &gt;/dev/null 2&gt;&amp;1 &amp;"</span> &gt;&gt; /etc/rc.local</div></pre></td></tr></table></figure>
+
+仍后台运行
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nohup net_speeder venet0 &quot;ip&quot; &gt; /dev/null 2&gt;&amp;1 &amp;</div></pre></td></tr></table></figure>
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/12/mac-baiduyun-aria2/" itemprop="url">
                   利用aria2突破百度云下载限速
                 </a>
@@ -1356,131 +1492,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/27/raspberry-update/" itemprop="url">
-                  树莓派－配置使用国内就像软件源更新
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-27T12:47:25+08:00" content="2016-07-27">
-              2016-07-27
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/树莓派/" itemprop="url" rel="index">
-                    <span itemprop="name">树莓派</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/27/raspberry-update/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/27/raspberry-update/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>环境：树莓派3 系统raspbian jessie版</p>
-<p>修改更新源文件，修改之前记得备份文件<br>1.修改 sources.list<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/apt/sources.list</div></pre></td></tr></table></figure></p>
-<p>删除原来的所有内容替换为国内源，这里使用的是浙江大学<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">deb http://mirrors.zju.edu.cn/raspbian/raspbian/ jessie main contrib non-free rpi</div><div class="line">deb-src http://mirrors.zju.edu.cn/raspbian/raspbian/ jessie main contrib non-free rpi</div></pre></td></tr></table></figure></p>
-<p>2.修改/etc/apt/sources.list.d/raspi.list 清华大学的<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">deb http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ jessie main non-free contrib</div><div class="line">deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ jessie main non-free contrib</div></pre></td></tr></table></figure></p>
-<p>最后<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure></p>
-<p>更多镜像源:<a href="http://www.raspbian.org/RaspbianMirrors" target="_blank" rel="external">http://www.raspbian.org/RaspbianMirrors</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1526,7 +1537,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1534,7 +1545,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1543,7 +1554,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
