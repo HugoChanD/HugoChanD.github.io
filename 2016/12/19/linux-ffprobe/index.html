@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="树莓派," />
+  <meta name="keywords" content="linux," />
 
 
 
@@ -84,22 +84,19 @@
 
 
 
-<meta name="description" content="树莓派自带的3.5声音接口电流声感人，淘宝买了一个usb免驱声卡
-这里纪录下raspbian 4.4系统切换声卡的方法
-查看声卡：cat /proc/asound/cards12340 [ALSA           ]: bcm2835 - bcm2835 ALSA                     bcm2835 ALSA1 [Device         ]: USB-Audio -">
+<meta name="description" content="ffmpeg功能强大，可以通过命令行来对音视频进行处理
+1.OSX下安装ffmpeg1brew install ffmpeg">
 <meta property="og:type" content="article">
-<meta property="og:title" content="树莓派－切换usb声卡">
-<meta property="og:url" content="http://www.hugospi.com/2016/07/27/raspberry-auto/index.html">
+<meta property="og:title" content="ffprobe查找视频分辨率大于900的文件">
+<meta property="og:url" content="http://www.hugospi.com/2016/12/19/linux-ffprobe/index.html">
 <meta property="og:site_name" content="Hugo Chan">
-<meta property="og:description" content="树莓派自带的3.5声音接口电流声感人，淘宝买了一个usb免驱声卡
-这里纪录下raspbian 4.4系统切换声卡的方法
-查看声卡：cat /proc/asound/cards12340 [ALSA           ]: bcm2835 - bcm2835 ALSA                     bcm2835 ALSA1 [Device         ]: USB-Audio -">
-<meta property="og:updated_time" content="2016-07-28T02:35:00.000Z">
+<meta property="og:description" content="ffmpeg功能强大，可以通过命令行来对音视频进行处理
+1.OSX下安装ffmpeg1brew install ffmpeg">
+<meta property="og:updated_time" content="2016-12-19T03:14:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="树莓派－切换usb声卡">
-<meta name="twitter:description" content="树莓派自带的3.5声音接口电流声感人，淘宝买了一个usb免驱声卡
-这里纪录下raspbian 4.4系统切换声卡的方法
-查看声卡：cat /proc/asound/cards12340 [ALSA           ]: bcm2835 - bcm2835 ALSA                     bcm2835 ALSA1 [Device         ]: USB-Audio -">
+<meta name="twitter:title" content="ffprobe查找视频分辨率大于900的文件">
+<meta name="twitter:description" content="ffmpeg功能强大，可以通过命令行来对音视频进行处理
+1.OSX下安装ffmpeg1brew install ffmpeg">
 
 
 
@@ -120,9 +117,9 @@
 
 
 
-  <link rel="canonical" href="http://www.hugospi.com/2016/07/27/raspberry-auto/"/>
+  <link rel="canonical" href="http://www.hugospi.com/2016/12/19/linux-ffprobe/"/>
 
-  <title> 树莓派－切换usb声卡 | Hugo Chan </title>
+  <title> ffprobe查找视频分辨率大于900的文件 | Hugo Chan </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +259,7 @@
             
             
               
-                树莓派－切换usb声卡
+                ffprobe查找视频分辨率大于900的文件
               
             
           </h1>
@@ -274,8 +271,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-27T20:13:21+08:00" content="2016-07-27">
-              2016-07-27
+            <time itemprop="dateCreated" datetime="2016-12-19T10:59:27+08:00" content="2016-12-19">
+              2016-12-19
             </time>
           </span>
 
@@ -288,8 +285,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/树莓派/" itemprop="url" rel="index">
-                    <span itemprop="name">树莓派</span>
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
                   </a>
                 </span>
 
@@ -304,8 +301,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/27/raspberry-auto/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/27/raspberry-auto/" itemprop="commentsCount"></span>
+                <a href="/2016/12/19/linux-ffprobe/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/19/linux-ffprobe/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -328,14 +325,22 @@
       
 
       
-        <p>树莓派自带的3.5声音接口电流声感人，淘宝买了一个usb免驱声卡</p>
-<p>这里纪录下raspbian 4.4系统切换声卡的方法</p>
-<p>查看声卡：cat /proc/asound/cards<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">0 [ALSA           ]: bcm2835 - bcm2835 ALSA</div><div class="line">                     bcm2835 ALSA</div><div class="line">1 [Device         ]: USB-Audio - USB PnP Sound Device</div><div class="line">                     C-Media Electronics Inc. USB PnP Sound Device at usb-3f980000.usb-1.5.3, full s</div></pre></td></tr></table></figure></p>
-<p>可以看到两张声卡，usb-Audio就是usb声卡 </p>
-<p>编辑家目录下的 .asoundrc文件，将0改为1，修改后如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">pcm.!default &#123;</div><div class="line">         <span class="built_in">type</span> hw</div><div class="line">         card 1</div><div class="line"> &#125; </div><div class="line"> ctl.!default &#123;</div><div class="line">         <span class="built_in">type</span> hw</div><div class="line">         card 1</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
-<p>创建配置文件：/etc/asound.conf<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">pcm.!default &#123;</div><div class="line">    <span class="built_in">type</span> hw</div><div class="line">    card 1</div><div class="line">&#125;</div><div class="line"></div><div class="line">ctl.!default &#123;</div><div class="line">    <span class="built_in">type</span> hw</div><div class="line">    card 1</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>通过alsamixer命令可以调节音量`</p>
+        <p>ffmpeg功能强大，可以通过命令行来对音视频进行处理</p>
+<p>1.OSX下安装ffmpeg<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install ffmpeg</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>2.使用ffprobe获取视频文件信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ffprobe -print_format json -show_format -show_streams -i ./video/file.mp4</div></pre></td></tr></table></figure></p>
+<pre><code>其中：  
 
+-print_format json（以json格式输出）， 
+
+-show_format（输出封装格式信息），
+
+-show_streams（输出流信息)
+
+-i ./video/file.mp4（输入文件）
+</code></pre><p>3.查找分辨率大于900的文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> *;<span class="keyword">do</span> ffprobe -v quiet -print_format json -show_format -show_streams -i <span class="variable">$i</span>|<span class="keyword">if</span> [ $(jq <span class="string">'.streams[0].width'</span>) <span class="_">-gt</span> <span class="string">"900"</span> ];<span class="keyword">then</span>  <span class="built_in">echo</span> <span class="variable">$i</span> &gt;&gt; file1 ;<span class="keyword">fi</span>;<span class="keyword">done</span></div></pre></td></tr></table></figure></p>
+<pre><code>其中jq为json解析工具
+</code></pre>
       
     </div>
 
@@ -357,7 +362,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/树莓派/" rel="tag">#树莓派</a>
+            <a href="/tags/linux/" rel="tag">#linux</a>
           
         </div>
       
@@ -366,17 +371,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/27/raspberry-samba/" rel="next" title="树莓派－搭建家庭nas服务">
-                <i class="fa fa-chevron-left"></i> 树莓派－搭建家庭nas服务
+              <a href="/2016/12/14/VPS-Shadowsocks/" rel="next" title="自建梯子-搬瓦工搭建Shadowsocks服务加速(转载)">
+                <i class="fa fa-chevron-left"></i> 自建梯子-搬瓦工搭建Shadowsocks服务加速(转载)
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/27/raspberry-airplay/" rel="prev" title="树莓派－用shairport-sync搭建airplay播放器">
-                树莓派－用shairport-sync搭建airplay播放器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -402,8 +403,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/27/raspberry-auto/"
-           data-title="树莓派－切换usb声卡" data-url="http://www.hugospi.com/2016/07/27/raspberry-auto/">
+      <div class="ds-thread" data-thread-key="2016/12/19/linux-ffprobe/"
+           data-title="ffprobe查找视频分辨率大于900的文件" data-url="http://www.hugospi.com/2016/12/19/linux-ffprobe/">
       </div>
     
   </div>
