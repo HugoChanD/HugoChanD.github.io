@@ -258,6 +258,158 @@
             
               
                 
+                <a class="post-title-link" href="/2016/12/27/linux-mysql/" itemprop="url">
+                  编译安装Mysql(转载)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-27T09:23:35+08:00" content="2016-12-27">
+              2016-12-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/12/27/linux-mysql/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/27/linux-mysql/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/12/27/linux-mysql/" class="leancloud_visitors" data-flag-title="编译安装Mysql(转载)">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.安装依赖包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install make gcc-c++ cmake bison-devel  ncurses-devel</div></pre></td></tr></table></figure></p>
+<p>2.下载mysql<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget http://101.110.118.68/cdn.mysql.com/Downloads/MySQL-5.5/mysql-5.5.54.tar.gz</div><div class="line">tar -zxvf mysql-5.5.54.tar.gz</div><div class="line"><span class="built_in">cd</span> mysql-5.5.54</div></pre></td></tr></table></figure></p>
+<p>3.编译安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">cmake \</div><div class="line">-DCMAKE_INSTALL_PREFIX=/usr/<span class="built_in">local</span>/mysql \</div><div class="line">-DMYSQL_DATADIR=/usr/<span class="built_in">local</span>/mysql/data \</div><div class="line">-DSYSCONFDIR=/etc \</div><div class="line">-DWITH_MYISAM_STORAGE_ENGINE=1 \</div><div class="line">-DWITH_INNOBASE_STORAGE_ENGINE=1 \</div><div class="line">-DWITH_MEMORY_STORAGE_ENGINE=1 \</div><div class="line">-DWITH_READLINE=1 \</div><div class="line">-DMYSQL_UNIX_ADDR=/var/lib/mysql/mysql.sock \</div><div class="line">-DMYSQL_TCP_PORT=3306 \</div><div class="line">-DENABLED_LOCAL_INFILE=1 \</div><div class="line">-DWITH_PARTITION_STORAGE_ENGINE=1 \</div><div class="line">-DEXTRA_CHARSETS=all \</div><div class="line">-DDEFAULT_CHARSET=utf8 \</div><div class="line">-DDEFAULT_COLLATION=utf8_general_ci</div><div class="line"></div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure></p>
+<p>编译参数说明：<a href="http://dev.mysql.com/doc/refman/5.5/en/source-configuration-options.html" target="_blank" rel="external">http://dev.mysql.com/doc/refman/5.5/en/source-configuration-options.html</a></p>
+<p>4.配置Mysql</p>
+<p>创建mysql用户与组<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">groupadd mysql</div><div class="line">useradd -g mysql mysql</div></pre></td></tr></table></figure></p>
+<p>修改/usr/local/mysql权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chown -R mysql:mysql /usr/<span class="built_in">local</span>/mysql</div></pre></td></tr></table></figure></p>
+<p>初始化<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/mysql</div><div class="line"><span class="comment">#创建数据库和表</span></div><div class="line">scripts/mysql_install_db --basedir=/usr/<span class="built_in">local</span>/mysql --datadir=/usr/<span class="built_in">local</span>/mysql/data --user=mysql</div></pre></td></tr></table></figure></p>
+<p>启动Mysql<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#添加服务，设置开机启动</span></div><div class="line">cp support-files/mysql.server /etc/init.d/mysql</div><div class="line">chkconfig mysql on</div><div class="line">service mysql start</div></pre></td></tr></table></figure></p>
+<p>MySQL启动成功后，root默认没有密码，我们需要设置root密码。</p>
+<p>设置之前，我们需要先设置PATH，要不不能直接调用mysql</p>
+<p>修改/etc/profile文件，在文件末尾添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">PATH=/usr/<span class="built_in">local</span>/mysql/bin:<span class="variable">$PATH</span></div><div class="line"><span class="built_in">export</span> PATH</div></pre></td></tr></table></figure></p>
+<p>配置生效</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> /etc/profile</div></pre></td></tr></table></figure>
+<p>执行下面的命令修改root密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql -uroot  </div><div class="line">mysql&gt; SET PASSWORD = PASSWORD(<span class="string">'123456'</span>);</div></pre></td></tr></table></figure>
+<p>若要设置root用户可以远程访问，执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO <span class="string">'root'</span>@<span class="string">'172.16.%'</span> IDENTIFIED BY <span class="string">'password'</span> WITH GRANT OPTION;</div></pre></td></tr></table></figure>
+<p>配置防火墙<br>防火墙的3306端口默认没有开启，若要远程访问，需要开启这个端口</p>
+<p>打开/etc/sysconfig/iptables</p>
+<p>在“-A INPUT –m state –state NEW –m tcp –p –dport 22 –j ACCEPT”，下添加：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-A INPUT -m state --state NEW -m tcp -p -dport 3306 -j ACCEPT</div></pre></td></tr></table></figure></p>
+<p>然后保存，并关闭该文件，在终端内运行下面的命令，刷新防火墙配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service iptables restart</div></pre></td></tr></table></figure>
+<p>OK，一切配置完毕，你可以访问你的MySQL了~</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/12/19/linux-ffprobe/" itemprop="url">
                   ffprobe查找视频分辨率大于900的文件
                 </a>
@@ -1435,141 +1587,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/27/raspberry-auto/" itemprop="url">
-                  树莓派－切换usb声卡
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-27T20:13:21+08:00" content="2016-07-27">
-              2016-07-27
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/树莓派/" itemprop="url" rel="index">
-                    <span itemprop="name">树莓派</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/27/raspberry-auto/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/27/raspberry-auto/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/07/27/raspberry-auto/" class="leancloud_visitors" data-flag-title="树莓派－切换usb声卡">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>树莓派自带的3.5声音接口电流声感人，淘宝买了一个usb免驱声卡</p>
-<p>这里纪录下raspbian 4.4系统切换声卡的方法</p>
-<p>查看声卡：cat /proc/asound/cards<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">0 [ALSA           ]: bcm2835 - bcm2835 ALSA</div><div class="line">                     bcm2835 ALSA</div><div class="line">1 [Device         ]: USB-Audio - USB PnP Sound Device</div><div class="line">                     C-Media Electronics Inc. USB PnP Sound Device at usb-3f980000.usb-1.5.3, full s</div></pre></td></tr></table></figure></p>
-<p>可以看到两张声卡，usb-Audio就是usb声卡 </p>
-<p>编辑家目录下的 .asoundrc文件，将0改为1，修改后如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">pcm.!default &#123;</div><div class="line">         <span class="built_in">type</span> hw</div><div class="line">         card 1</div><div class="line"> &#125; </div><div class="line"> ctl.!default &#123;</div><div class="line">         <span class="built_in">type</span> hw</div><div class="line">         card 1</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
-<p>创建配置文件：/etc/asound.conf<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">pcm.!default &#123;</div><div class="line">    <span class="built_in">type</span> hw</div><div class="line">    card 1</div><div class="line">&#125;</div><div class="line"></div><div class="line">ctl.!default &#123;</div><div class="line">    <span class="built_in">type</span> hw</div><div class="line">    card 1</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>通过alsamixer命令可以调节音量`</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1615,7 +1632,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

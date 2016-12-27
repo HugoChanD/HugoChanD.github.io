@@ -258,6 +258,141 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/27/raspberry-auto/" itemprop="url">
+                  树莓派－切换usb声卡
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-27T20:13:21+08:00" content="2016-07-27">
+              2016-07-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/树莓派/" itemprop="url" rel="index">
+                    <span itemprop="name">树莓派</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/27/raspberry-auto/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/27/raspberry-auto/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/07/27/raspberry-auto/" class="leancloud_visitors" data-flag-title="树莓派－切换usb声卡">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>树莓派自带的3.5声音接口电流声感人，淘宝买了一个usb免驱声卡</p>
+<p>这里纪录下raspbian 4.4系统切换声卡的方法</p>
+<p>查看声卡：cat /proc/asound/cards<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">0 [ALSA           ]: bcm2835 - bcm2835 ALSA</div><div class="line">                     bcm2835 ALSA</div><div class="line">1 [Device         ]: USB-Audio - USB PnP Sound Device</div><div class="line">                     C-Media Electronics Inc. USB PnP Sound Device at usb-3f980000.usb-1.5.3, full s</div></pre></td></tr></table></figure></p>
+<p>可以看到两张声卡，usb-Audio就是usb声卡 </p>
+<p>编辑家目录下的 .asoundrc文件，将0改为1，修改后如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">pcm.!default &#123;</div><div class="line">         <span class="built_in">type</span> hw</div><div class="line">         card 1</div><div class="line"> &#125; </div><div class="line"> ctl.!default &#123;</div><div class="line">         <span class="built_in">type</span> hw</div><div class="line">         card 1</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<p>创建配置文件：/etc/asound.conf<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">pcm.!default &#123;</div><div class="line">    <span class="built_in">type</span> hw</div><div class="line">    card 1</div><div class="line">&#125;</div><div class="line"></div><div class="line">ctl.!default &#123;</div><div class="line">    <span class="built_in">type</span> hw</div><div class="line">    card 1</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>通过alsamixer命令可以调节音量`</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/27/raspberry-samba/" itemprop="url">
                   树莓派－搭建家庭nas服务
                 </a>
@@ -1461,7 +1596,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

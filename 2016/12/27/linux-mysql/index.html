@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="树莓派," />
+  <meta name="keywords" content="linux," />
 
 
 
@@ -84,22 +84,19 @@
 
 
 
-<meta name="description" content="家里的小水管用的是联通的宽带，前些日子升级光纤之后发现ip地址变成了10...*，内网…打电话给客服要求更换公网ip，估计是ipv4地址资源匮乏最终投诉无果，最后只能通过ngrok进行内网穿透
-ngrok项目地址：https://github.com/inconshreveable/ngrok可以自行编译搭建服务器，这里我直接使用搭建好的服务
-国内服务器：ngrok.ccittun.comnata">
+<meta name="description" content="1.安装依赖包1yum -y install make gcc-c++ cmake bison-devel  ncurses-devel
+2.下载mysql123wget http://101.110.118.68/cdn.mysql.com/Downloads/MySQL-5.5/mysql-5.5.54.tar.gztar -zxvf mysql-5.5.54.tar.gzcd mysql-5">
 <meta property="og:type" content="article">
-<meta property="og:title" content="树莓派－利用ngrok进行内网穿透">
-<meta property="og:url" content="http://www.hugospi.com/2016/08/17/raspberry-ngrok/index.html">
+<meta property="og:title" content="编译安装Mysql(转载)">
+<meta property="og:url" content="http://www.hugospi.com/2016/12/27/linux-mysql/index.html">
 <meta property="og:site_name" content="Hugo Chan">
-<meta property="og:description" content="家里的小水管用的是联通的宽带，前些日子升级光纤之后发现ip地址变成了10...*，内网…打电话给客服要求更换公网ip，估计是ipv4地址资源匮乏最终投诉无果，最后只能通过ngrok进行内网穿透
-ngrok项目地址：https://github.com/inconshreveable/ngrok可以自行编译搭建服务器，这里我直接使用搭建好的服务
-国内服务器：ngrok.ccittun.comnata">
-<meta property="og:updated_time" content="2016-08-17T03:39:40.000Z">
+<meta property="og:description" content="1.安装依赖包1yum -y install make gcc-c++ cmake bison-devel  ncurses-devel
+2.下载mysql123wget http://101.110.118.68/cdn.mysql.com/Downloads/MySQL-5.5/mysql-5.5.54.tar.gztar -zxvf mysql-5.5.54.tar.gzcd mysql-5">
+<meta property="og:updated_time" content="2016-12-27T01:46:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="树莓派－利用ngrok进行内网穿透">
-<meta name="twitter:description" content="家里的小水管用的是联通的宽带，前些日子升级光纤之后发现ip地址变成了10...*，内网…打电话给客服要求更换公网ip，估计是ipv4地址资源匮乏最终投诉无果，最后只能通过ngrok进行内网穿透
-ngrok项目地址：https://github.com/inconshreveable/ngrok可以自行编译搭建服务器，这里我直接使用搭建好的服务
-国内服务器：ngrok.ccittun.comnata">
+<meta name="twitter:title" content="编译安装Mysql(转载)">
+<meta name="twitter:description" content="1.安装依赖包1yum -y install make gcc-c++ cmake bison-devel  ncurses-devel
+2.下载mysql123wget http://101.110.118.68/cdn.mysql.com/Downloads/MySQL-5.5/mysql-5.5.54.tar.gztar -zxvf mysql-5.5.54.tar.gzcd mysql-5">
 
 
 
@@ -120,9 +117,9 @@ ngrok项目地址：https://github.com/inconshreveable/ngrok可以自行编译�
 
 
 
-  <link rel="canonical" href="http://www.hugospi.com/2016/08/17/raspberry-ngrok/"/>
+  <link rel="canonical" href="http://www.hugospi.com/2016/12/27/linux-mysql/"/>
 
-  <title> 树莓派－利用ngrok进行内网穿透 | Hugo Chan </title>
+  <title> 编译安装Mysql(转载) | Hugo Chan </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +259,7 @@ ngrok项目地址：https://github.com/inconshreveable/ngrok可以自行编译�
             
             
               
-                树莓派－利用ngrok进行内网穿透
+                编译安装Mysql(转载)
               
             
           </h1>
@@ -274,8 +271,8 @@ ngrok项目地址：https://github.com/inconshreveable/ngrok可以自行编译�
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-17T09:30:35+08:00" content="2016-08-17">
-              2016-08-17
+            <time itemprop="dateCreated" datetime="2016-12-27T09:23:35+08:00" content="2016-12-27">
+              2016-12-27
             </time>
           </span>
 
@@ -288,8 +285,8 @@ ngrok项目地址：https://github.com/inconshreveable/ngrok可以自行编译�
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/树莓派/" itemprop="url" rel="index">
-                    <span itemprop="name">树莓派</span>
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
                   </a>
                 </span>
 
@@ -304,8 +301,8 @@ ngrok项目地址：https://github.com/inconshreveable/ngrok可以自行编译�
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/17/raspberry-ngrok/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/17/raspberry-ngrok/" itemprop="commentsCount"></span>
+                <a href="/2016/12/27/linux-mysql/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/27/linux-mysql/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -315,7 +312,7 @@ ngrok项目地址：https://github.com/inconshreveable/ngrok可以自行编译�
 
           
           
-             <span id="/2016/08/17/raspberry-ngrok/" class="leancloud_visitors" data-flag-title="树莓派－利用ngrok进行内网穿透">
+             <span id="/2016/12/27/linux-mysql/" class="leancloud_visitors" data-flag-title="编译安装Mysql(转载)">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -337,12 +334,30 @@ ngrok项目地址：https://github.com/inconshreveable/ngrok可以自行编译�
       
 
       
-        <p>家里的小水管用的是联通的宽带，前些日子升级光纤之后发现ip地址变成了10.<em>.</em>.*，内网…<br>打电话给客服要求更换公网ip，估计是ipv4地址资源匮乏最终投诉无果，最后只能通过ngrok<br>进行内网穿透</p>
-<p>ngrok项目地址：<a href="https://github.com/inconshreveable/ngrok" target="_blank" rel="external">https://github.com/inconshreveable/ngrok</a><br>可以自行编译搭建服务器，这里我直接使用搭建好的服务</p>
-<p>国内服务器：<br>ngrok.cc<br>ittun.com<br>natapp.cn<br><a id="more"></a><br>我的树莓派不知道什么原因无法运行ngrok客户端，自行编译也不行，运行没有任何提示<br>无奈只能选择php客户端<br><a href="https://github.com/dosgo/ngrok-php" target="_blank" rel="external">https://github.com/dosgo/ngrok-php</a></p>
-<p>修改服务器跟端口<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$seraddr</span> = <span class="string">'ittun.com'</span>; //ngrok服务器地址</div><div class="line"><span class="variable">$port</span> = 4443; //端口</div><div class="line"><span class="variable">$is_verify_peer</span> = <span class="literal">false</span>; //是否校验证书</div><div class="line">//你要映射到通道</div><div class="line"><span class="variable">$Tunnels</span> = array(</div><div class="line">    array(</div><div class="line">        <span class="string">'protocol'</span> =&gt; <span class="string">'http'</span>,</div><div class="line">        <span class="string">'hostname'</span> =&gt; <span class="string">'www.xxx.com'</span>,</div><div class="line">        <span class="string">'subdomain'</span> =&gt; <span class="string">''</span>,</div><div class="line">        <span class="string">'rport'</span> =&gt; 0,</div><div class="line">        <span class="string">'lhost'</span> =&gt; <span class="string">'127.0.0.1'</span>,</div><div class="line">        <span class="string">'lport'</span> =&gt; 80</div><div class="line">    ),</div><div class="line">    array(</div><div class="line">        <span class="string">'protocol'</span> =&gt; <span class="string">'http'</span>,</div><div class="line">        <span class="string">'hostname'</span> =&gt; <span class="string">''</span>,</div><div class="line">        <span class="string">'subdomain'</span> =&gt; <span class="string">'xxx'</span>,</div><div class="line">        <span class="string">'rport'</span> =&gt; 0,</div><div class="line">        <span class="string">'lhost'</span> =&gt; <span class="string">'127.0.0.1'</span>,</div><div class="line">        <span class="string">'lport'</span> =&gt; 80</div><div class="line">    ),</div><div class="line">    array(</div><div class="line">        <span class="string">'protocol'</span> =&gt; <span class="string">'tcp'</span>,</div><div class="line">        <span class="string">'hostname'</span> =&gt; <span class="string">''</span>,</div><div class="line">        <span class="string">'subdomain'</span> =&gt; <span class="string">''</span>,</div><div class="line">        <span class="string">'rport'</span> =&gt; 57715,</div><div class="line">        <span class="string">'lhost'</span> =&gt; <span class="string">'127.0.0.1'</span>,</div><div class="line">        <span class="string">'lport'</span> =&gt; 22</div><div class="line">    ),</div><div class="line">);</div></pre></td></tr></table></figure></p>
-<p>直接运行就可以</p>
-<p>可以添加计划shell脚本检测是否运行ngrok客户端</p>
+        <p>1.安装依赖包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install make gcc-c++ cmake bison-devel  ncurses-devel</div></pre></td></tr></table></figure></p>
+<p>2.下载mysql<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget http://101.110.118.68/cdn.mysql.com/Downloads/MySQL-5.5/mysql-5.5.54.tar.gz</div><div class="line">tar -zxvf mysql-5.5.54.tar.gz</div><div class="line"><span class="built_in">cd</span> mysql-5.5.54</div></pre></td></tr></table></figure></p>
+<p>3.编译安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">cmake \</div><div class="line">-DCMAKE_INSTALL_PREFIX=/usr/<span class="built_in">local</span>/mysql \</div><div class="line">-DMYSQL_DATADIR=/usr/<span class="built_in">local</span>/mysql/data \</div><div class="line">-DSYSCONFDIR=/etc \</div><div class="line">-DWITH_MYISAM_STORAGE_ENGINE=1 \</div><div class="line">-DWITH_INNOBASE_STORAGE_ENGINE=1 \</div><div class="line">-DWITH_MEMORY_STORAGE_ENGINE=1 \</div><div class="line">-DWITH_READLINE=1 \</div><div class="line">-DMYSQL_UNIX_ADDR=/var/lib/mysql/mysql.sock \</div><div class="line">-DMYSQL_TCP_PORT=3306 \</div><div class="line">-DENABLED_LOCAL_INFILE=1 \</div><div class="line">-DWITH_PARTITION_STORAGE_ENGINE=1 \</div><div class="line">-DEXTRA_CHARSETS=all \</div><div class="line">-DDEFAULT_CHARSET=utf8 \</div><div class="line">-DDEFAULT_COLLATION=utf8_general_ci</div><div class="line"></div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure></p>
+<p>编译参数说明：<a href="http://dev.mysql.com/doc/refman/5.5/en/source-configuration-options.html" target="_blank" rel="external">http://dev.mysql.com/doc/refman/5.5/en/source-configuration-options.html</a></p>
+<p>4.配置Mysql</p>
+<p>创建mysql用户与组<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">groupadd mysql</div><div class="line">useradd -g mysql mysql</div></pre></td></tr></table></figure></p>
+<p>修改/usr/local/mysql权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chown -R mysql:mysql /usr/<span class="built_in">local</span>/mysql</div></pre></td></tr></table></figure></p>
+<p>初始化<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/mysql</div><div class="line"><span class="comment">#创建数据库和表</span></div><div class="line">scripts/mysql_install_db --basedir=/usr/<span class="built_in">local</span>/mysql --datadir=/usr/<span class="built_in">local</span>/mysql/data --user=mysql</div></pre></td></tr></table></figure></p>
+<p>启动Mysql<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#添加服务，设置开机启动</span></div><div class="line">cp support-files/mysql.server /etc/init.d/mysql</div><div class="line">chkconfig mysql on</div><div class="line">service mysql start</div></pre></td></tr></table></figure></p>
+<p>MySQL启动成功后，root默认没有密码，我们需要设置root密码。</p>
+<p>设置之前，我们需要先设置PATH，要不不能直接调用mysql</p>
+<p>修改/etc/profile文件，在文件末尾添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">PATH=/usr/<span class="built_in">local</span>/mysql/bin:<span class="variable">$PATH</span></div><div class="line"><span class="built_in">export</span> PATH</div></pre></td></tr></table></figure></p>
+<p>配置生效</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> /etc/profile</div></pre></td></tr></table></figure>
+<p>执行下面的命令修改root密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql -uroot  </div><div class="line">mysql&gt; SET PASSWORD = PASSWORD(<span class="string">'123456'</span>);</div></pre></td></tr></table></figure>
+<p>若要设置root用户可以远程访问，执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO <span class="string">'root'</span>@<span class="string">'172.16.%'</span> IDENTIFIED BY <span class="string">'password'</span> WITH GRANT OPTION;</div></pre></td></tr></table></figure>
+<p>配置防火墙<br>防火墙的3306端口默认没有开启，若要远程访问，需要开启这个端口</p>
+<p>打开/etc/sysconfig/iptables</p>
+<p>在“-A INPUT –m state –state NEW –m tcp –p –dport 22 –j ACCEPT”，下添加：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-A INPUT -m state --state NEW -m tcp -p -dport 3306 -j ACCEPT</div></pre></td></tr></table></figure></p>
+<p>然后保存，并关闭该文件，在终端内运行下面的命令，刷新防火墙配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service iptables restart</div></pre></td></tr></table></figure>
+<p>OK，一切配置完毕，你可以访问你的MySQL了~</p>
 
       
     </div>
@@ -365,7 +380,7 @@ ngrok项目地址：https://github.com/inconshreveable/ngrok可以自行编译�
       
         <div class="post-tags">
           
-            <a href="/tags/树莓派/" rel="tag">#树莓派</a>
+            <a href="/tags/linux/" rel="tag">#linux</a>
           
         </div>
       
@@ -374,17 +389,13 @@ ngrok项目地址：https://github.com/inconshreveable/ngrok可以自行编译�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/29/raspberry-owncloud/" rel="next" title="树莓派－利用owncloud搭建个人私有云">
-                <i class="fa fa-chevron-left"></i> 树莓派－利用owncloud搭建个人私有云
+              <a href="/2016/12/19/linux-ffprobe/" rel="next" title="ffprobe查找视频分辨率大于900的文件">
+                <i class="fa fa-chevron-left"></i> ffprobe查找视频分辨率大于900的文件
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/18/raspberry-alarm-clock/" rel="prev" title="树莓派－节假日闹钟">
-                树莓派－节假日闹钟 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -410,8 +421,8 @@ ngrok项目地址：https://github.com/inconshreveable/ngrok可以自行编译�
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/17/raspberry-ngrok/"
-           data-title="树莓派－利用ngrok进行内网穿透" data-url="http://www.hugospi.com/2016/08/17/raspberry-ngrok/">
+      <div class="ds-thread" data-thread-key="2016/12/27/linux-mysql/"
+           data-title="编译安装Mysql(转载)" data-url="http://www.hugospi.com/2016/12/27/linux-mysql/">
       </div>
     
   </div>
