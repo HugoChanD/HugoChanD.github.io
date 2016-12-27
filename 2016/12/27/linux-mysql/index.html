@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="Hugo Chan">
 <meta property="og:description" content="1.安装依赖包1yum -y install make gcc-c++ cmake bison-devel  ncurses-devel
 2.下载mysql123wget http://101.110.118.68/cdn.mysql.com/Downloads/MySQL-5.5/mysql-5.5.54.tar.gztar -zxvf mysql-5.5.54.tar.gzcd mysql-5">
-<meta property="og:updated_time" content="2016-12-27T01:46:41.000Z">
+<meta property="og:updated_time" content="2016-12-27T01:48:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编译安装Mysql(转载)">
 <meta name="twitter:description" content="1.安装依赖包1yum -y install make gcc-c++ cmake bison-devel  ncurses-devel
@@ -336,6 +336,7 @@
       
         <p>1.安装依赖包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install make gcc-c++ cmake bison-devel  ncurses-devel</div></pre></td></tr></table></figure></p>
 <p>2.下载mysql<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget http://101.110.118.68/cdn.mysql.com/Downloads/MySQL-5.5/mysql-5.5.54.tar.gz</div><div class="line">tar -zxvf mysql-5.5.54.tar.gz</div><div class="line"><span class="built_in">cd</span> mysql-5.5.54</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>3.编译安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">cmake \</div><div class="line">-DCMAKE_INSTALL_PREFIX=/usr/<span class="built_in">local</span>/mysql \</div><div class="line">-DMYSQL_DATADIR=/usr/<span class="built_in">local</span>/mysql/data \</div><div class="line">-DSYSCONFDIR=/etc \</div><div class="line">-DWITH_MYISAM_STORAGE_ENGINE=1 \</div><div class="line">-DWITH_INNOBASE_STORAGE_ENGINE=1 \</div><div class="line">-DWITH_MEMORY_STORAGE_ENGINE=1 \</div><div class="line">-DWITH_READLINE=1 \</div><div class="line">-DMYSQL_UNIX_ADDR=/var/lib/mysql/mysql.sock \</div><div class="line">-DMYSQL_TCP_PORT=3306 \</div><div class="line">-DENABLED_LOCAL_INFILE=1 \</div><div class="line">-DWITH_PARTITION_STORAGE_ENGINE=1 \</div><div class="line">-DEXTRA_CHARSETS=all \</div><div class="line">-DDEFAULT_CHARSET=utf8 \</div><div class="line">-DDEFAULT_COLLATION=utf8_general_ci</div><div class="line"></div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure></p>
 <p>编译参数说明：<a href="http://dev.mysql.com/doc/refman/5.5/en/source-configuration-options.html" target="_blank" rel="external">http://dev.mysql.com/doc/refman/5.5/en/source-configuration-options.html</a></p>
 <p>4.配置Mysql</p>
