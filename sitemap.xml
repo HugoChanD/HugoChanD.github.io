@@ -1,4 +1,186 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
+  <url>
+    <loc>http://www.hugospi.com/2017-01-05/hexo-MODULE-NOT-FOUND/</loc>
+    
+    <lastmod>2017-01-05T07:34:33.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/2017-01-05/raspberry-ffmpeglive/</loc>
+    
+    <lastmod>2017-01-05T06:50:33.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/2016-12-27/linux-php-error/</loc>
+    
+    <lastmod>2016-12-27T01:57:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/2016-12-27/linux-mysql/</loc>
+    
+    <lastmod>2016-12-27T01:48:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/2016-07-23/raspberrybak/</loc>
+    
+    <lastmod>2016-12-19T05:20:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/2016-12-19/linux-ffprobe/</loc>
+    
+    <lastmod>2016-12-19T03:14:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/2016-12-14/VPS-Shadowsocks/</loc>
+    
+    <lastmod>2016-12-14T07:19:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/2016-10-12/mac-baiduyun-aria2/</loc>
+    
+    <lastmod>2016-10-12T03:10:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/2016-09-30/ESP8266-use/</loc>
+    
+    <lastmod>2016-09-30T03:33:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/2016-09-15/raspberry-DHT11/</loc>
+    
+    <lastmod>2016-09-15T16:07:51.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/2016-07-22/pythonweibo/</loc>
+    
+    <lastmod>2016-09-07T02:09:16.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/2016-08-18/raspberry-alarm-clock/</loc>
+    
+    <lastmod>2016-08-18T02:58:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/2016-08-17/raspberry-ngrok/</loc>
+    
+    <lastmod>2016-08-17T03:39:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/2016-07-21/hello-world/</loc>
+    
+    <lastmod>2016-08-17T02:08:36.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/2016-07-29/raspberry-owncloud/</loc>
+    
+    <lastmod>2016-07-29T08:23:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/2016-07-27/raspberry-auto/</loc>
+    
+    <lastmod>2016-07-28T02:35:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/2016-07-27/raspberry-samba/</loc>
+    
+    <lastmod>2016-07-28T01:26:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/2016-07-27/raspberry-airplay/</loc>
+    
+    <lastmod>2016-07-28T01:25:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/2016-07-27/raspberry-update/</loc>
+    
+    <lastmod>2016-07-27T14:47:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/2016-07-27/raspberry-python/</loc>
+    
+    <lastmod>2016-07-27T06:11:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/2016-07-27/raspberryvim/</loc>
+    
+    <lastmod>2016-07-27T02:58:56.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/2016-07-26/raspberry-mac/</loc>
+    
+    <lastmod>2016-07-26T16:28:15.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/about/index.html</loc>
+    
+    <lastmod>2016-07-25T02:40:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/2016-07-22/weather/</loc>
+    
+    <lastmod>2016-07-22T04:49:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/categories/index.html</loc>
+    
+    <lastmod>2016-07-21T13:10:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hugospi.com/tags/index.html</loc>
+    
+    <lastmod>2016-07-21T13:02:13.000Z</lastmod>
+    
+  </url>
+  
 </urlset>

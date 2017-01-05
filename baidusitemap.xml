@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://www.hugospi.com/2017-01-05/hexo-MODULE-NOT-FOUND/</loc>
+    <lastmod>2017-01-05T07:34:33.000Z</lastmod>
+    <data>
+        <display>
+        <title>hexo提示Cannot find module的解决方法</title>
+        <pubTime>2017-01-05T07:29:36.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="http://www.hugospi.com/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hugospi.com/2017-01-05/raspberry-ffmpeglive/</loc>
+    <lastmod>2017-01-05T06:50:33.000Z</lastmod>
+    <data>
+        <display>
+        <title>树莓派利用ffmpeg推流到直播平台</title>
+        <pubTime>2017-01-05T06:29:55.000Z</pubTime>
+        
+        <tag>树莓派</tag>
+         
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://www.hugospi.com/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hugospi.com/2016-12-27/linux-php-error/</loc>
+    <lastmod>2016-12-27T01:57:24.000Z</lastmod>
+    <data>
+        <display>
+        <title>编译php出现 [sapi/cli/php] Error 1 解决办法</title>
+        <pubTime>2016-12-27T01:51:23.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://www.hugospi.com/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hugospi.com/2016-12-27/linux-mysql/</loc>
+    <lastmod>2016-12-27T01:48:54.000Z</lastmod>
+    <data>
+        <display>
+        <title>编译安装Mysql(转载)</title>
+        <pubTime>2016-12-27T01:23:35.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://www.hugospi.com/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hugospi.com/2016-07-23/raspberrybak/</loc>
+    <lastmod>2016-12-19T05:20:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>树莓派－树莓派sd卡系统备份还原</title>
+        <pubTime>2016-07-23T03:47:49.000Z</pubTime>
+        
+        <tag>树莓派</tag>
+         
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://www.hugospi.com/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hugospi.com/2016-12-19/linux-ffprobe/</loc>
+    <lastmod>2016-12-19T03:14:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>ffprobe查找视频分辨率大于900的文件</title>
+        <pubTime>2016-12-19T02:59:27.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://www.hugospi.com/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hugospi.com/2016-12-14/VPS-Shadowsocks/</loc>
+    <lastmod>2016-12-14T07:19:03.000Z</lastmod>
+    <data>
+        <display>
+        <title>自建梯子-搬瓦工搭建Shadowsocks服务加速(转载)</title>
+        <pubTime>2016-12-14T03:18:27.000Z</pubTime>
+        
+        <tag>VPS</tag>
+         
+         
+           
+             
+              <breadCrumb title="VPS" url="http://www.hugospi.com/categories/VPS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hugospi.com/2016-10-12/mac-baiduyun-aria2/</loc>
+    <lastmod>2016-10-12T03:10:29.000Z</lastmod>
+    <data>
+        <display>
+        <title>利用aria2突破百度云下载限速</title>
+        <pubTime>2016-10-12T02:22:06.000Z</pubTime>
+        
+        <tag>mac</tag>
+         
+         
+           
+             
+              <breadCrumb title="MAC" url="http://www.hugospi.com/categories/MAC/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hugospi.com/2016-09-30/ESP8266-use/</loc>
+    <lastmod>2016-09-30T03:33:24.000Z</lastmod>
+    <data>
+        <display>
+        <title>ESP8266-NodeMCU 使用相关</title>
+        <pubTime>2016-09-30T02:34:28.000Z</pubTime>
+        
+        <tag>ESP8266 NodeMCU</tag>
+         
+         
+           
+             
+              <breadCrumb title="ESP8266 NodeMCU" url="http://www.hugospi.com/categories/ESP8266-NodeMCU/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hugospi.com/2016-09-15/raspberry-DHT11/</loc>
+    <lastmod>2016-09-15T16:07:51.000Z</lastmod>
+    <data>
+        <display>
+        <title>树莓派－接入DHT11温湿度传感器</title>
+        <pubTime>2016-09-15T14:50:49.000Z</pubTime>
+        
+        <tag>树莓派</tag>
+         
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://www.hugospi.com/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hugospi.com/2016-07-22/pythonweibo/</loc>
+    <lastmod>2016-09-07T02:09:16.000Z</lastmod>
+    <data>
+        <display>
+        <title>树莓派－python模拟登陆weibo定时发送微博</title>
+        <pubTime>2016-07-22T06:58:45.000Z</pubTime>
+        
+        <tag>树莓派</tag>
+         
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://www.hugospi.com/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hugospi.com/2016-08-18/raspberry-alarm-clock/</loc>
+    <lastmod>2016-08-18T02:58:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>树莓派－节假日闹钟</title>
+        <pubTime>2016-08-18T01:36:07.000Z</pubTime>
+        
+        <tag>树莓派</tag>
+         
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://www.hugospi.com/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hugospi.com/2016-08-17/raspberry-ngrok/</loc>
+    <lastmod>2016-08-17T03:39:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>树莓派－利用ngrok进行内网穿透</title>
+        <pubTime>2016-08-17T01:30:35.000Z</pubTime>
+        
+        <tag>树莓派</tag>
+         
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://www.hugospi.com/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hugospi.com/2016-07-21/hello-world/</loc>
+    <lastmod>2016-08-17T02:08:36.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2016-07-21T09:14:57.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hugospi.com/2016-07-29/raspberry-owncloud/</loc>
+    <lastmod>2016-07-29T08:23:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>树莓派－利用owncloud搭建个人私有云</title>
+        <pubTime>2016-07-29T06:52:09.000Z</pubTime>
+        
+        <tag>树莓派</tag>
+         
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://www.hugospi.com/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hugospi.com/2016-07-27/raspberry-auto/</loc>
+    <lastmod>2016-07-28T02:35:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>树莓派－切换usb声卡</title>
+        <pubTime>2016-07-27T12:13:21.000Z</pubTime>
+        
+        <tag>树莓派</tag>
+         
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://www.hugospi.com/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hugospi.com/2016-07-27/raspberry-samba/</loc>
+    <lastmod>2016-07-28T01:26:26.000Z</lastmod>
+    <data>
+        <display>
+        <title>树莓派－搭建家庭nas服务</title>
+        <pubTime>2016-07-27T05:07:40.000Z</pubTime>
+        
+        <tag>树莓派</tag>
+         
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://www.hugospi.com/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hugospi.com/2016-07-27/raspberry-airplay/</loc>
+    <lastmod>2016-07-28T01:25:09.000Z</lastmod>
+    <data>
+        <display>
+        <title>树莓派－用shairport-sync搭建airplay播放器</title>
+        <pubTime>2016-07-27T15:43:04.000Z</pubTime>
+        
+        <tag>树莓派</tag>
+         
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://www.hugospi.com/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hugospi.com/2016-07-27/raspberry-update/</loc>
+    <lastmod>2016-07-27T14:47:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>树莓派－配置使用国内就像软件源更新</title>
+        <pubTime>2016-07-27T04:47:25.000Z</pubTime>
+        
+        <tag>树莓派</tag>
+         
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://www.hugospi.com/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hugospi.com/2016-07-27/raspberry-python/</loc>
+    <lastmod>2016-07-27T06:11:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>树莓派－编译安装新版本的python</title>
+        <pubTime>2016-07-27T03:18:21.000Z</pubTime>
+        
+        <tag>树莓派</tag>
+         
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://www.hugospi.com/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hugospi.com/2016-07-27/raspberryvim/</loc>
+    <lastmod>2016-07-27T02:58:56.000Z</lastmod>
+    <data>
+        <display>
+        <title>树莓派－替换更新raspbian系统vim</title>
+        <pubTime>2016-07-27T02:52:41.000Z</pubTime>
+        
+        <tag>树莓派</tag>
+         
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://www.hugospi.com/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.hugospi.com/2016-07-26/raspberry-mac/</loc>
+    <lastmod>2016-07-26T16:28:15.000Z</lastmod>
+    <data>
+        <display>
+        <title>树莓派－mac系统下安装raspbian系统到sd卡</title>
+        <pubTime>2016-07-26T10:51:16.000Z</pubTime>
+        
+        <tag>树莓派</tag>
+         
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://www.hugospi.com/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://www.hugospi.com/2016-07-22/weather/</loc>
+    <lastmod>2016-07-22T04:49:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>树莓派-定时天气播报</title>
+        <pubTime>2016-07-22T03:42:21.000Z</pubTime>
+        
+        <tag>树莓派</tag>
+         
+         
+           
+             
+              <breadCrumb title="树莓派" url="http://www.hugospi.com/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+</urlset>
