@@ -4,6 +4,16 @@
   
     
     <entry>
+      <title><![CDATA[hexo提示Cannot find module的解决方法]]></title>
+      <url>http://www.hugospi.com/2017/01/05/hexo-MODULE-NOT-FOUND/</url>
+      <content type="html"><![CDATA[<p>问题：在使用hexo的时候会遇见以下问题<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div></pre></td></tr></table></figure></p>
+<p>搜索了下大部分都是用 npm install hexo –no-optional 解决，但是我试了还是不起作用</p>
+<p>在hexo目录下发现有DTraceProviderBindings这个模板，这个模块用于调试时提供更高级的信息</p>
+<p>最后这样解决：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm uninstall dtrace-provider</div><div class="line">npm install dtrace-provider</div></pre></td></tr></table></figure></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[树莓派利用ffmpeg推流到直播平台]]></title>
       <url>http://www.hugospi.com/2017/01/05/raspberry-ffmpeglive/</url>
       <content type="html"><![CDATA[<p>1.安装ffmpeg<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install ffmpeg</div></pre></td></tr></table></figure></p>
