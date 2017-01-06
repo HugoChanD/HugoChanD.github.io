@@ -84,19 +84,19 @@
 
 
 
-<meta name="description" content="1.安装ffmpeg1sudo apt-get install ffmpeg
-2.多视频文件直播推流12#随机播放添加电影名到视频右上角for((;;)); do i=`ls *.flv | sort -R | head -n1`  &amp;amp;&amp;amp; ffmpeg -re -i $i -acodec copy -vcodec libx264 -preset veryfast   -vf  &quot;d">
+<meta name="description" content="1.&amp;#x5B89;&amp;#x88C5;ffmpeg1sudo apt-get install ffmpeg
+2.&amp;#x591A;&amp;#x89C6;&amp;#x9891;&amp;#x6587;&amp;#x4EF6;&amp;#x76F4;&amp;#x64AD;&amp;#x63A8;&amp;#x6D41;12#&amp;#x968F;&amp;#x673A;&amp;#x64AD;&amp;#x653E;&amp;#x6DFB;&amp;#x52A0;&amp;#x7535;&amp;#x5F71;&amp;#x540">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树莓派利用ffmpeg推流到直播平台">
 <meta property="og:url" content="http://www.hugospi.com/2017-01-05/raspberry-ffmpeglive/index.html">
 <meta property="og:site_name" content="Hugo Chan">
-<meta property="og:description" content="1.安装ffmpeg1sudo apt-get install ffmpeg
-2.多视频文件直播推流12#随机播放添加电影名到视频右上角for((;;)); do i=`ls *.flv | sort -R | head -n1`  &amp;amp;&amp;amp; ffmpeg -re -i $i -acodec copy -vcodec libx264 -preset veryfast   -vf  &quot;d">
+<meta property="og:description" content="1.&amp;#x5B89;&amp;#x88C5;ffmpeg1sudo apt-get install ffmpeg
+2.&amp;#x591A;&amp;#x89C6;&amp;#x9891;&amp;#x6587;&amp;#x4EF6;&amp;#x76F4;&amp;#x64AD;&amp;#x63A8;&amp;#x6D41;12#&amp;#x968F;&amp;#x673A;&amp;#x64AD;&amp;#x653E;&amp;#x6DFB;&amp;#x52A0;&amp;#x7535;&amp;#x5F71;&amp;#x540">
 <meta property="og:updated_time" content="2017-01-05T06:50:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树莓派利用ffmpeg推流到直播平台">
-<meta name="twitter:description" content="1.安装ffmpeg1sudo apt-get install ffmpeg
-2.多视频文件直播推流12#随机播放添加电影名到视频右上角for((;;)); do i=`ls *.flv | sort -R | head -n1`  &amp;amp;&amp;amp; ffmpeg -re -i $i -acodec copy -vcodec libx264 -preset veryfast   -vf  &quot;d">
+<meta name="twitter:description" content="1.&amp;#x5B89;&amp;#x88C5;ffmpeg1sudo apt-get install ffmpeg
+2.&amp;#x591A;&amp;#x89C6;&amp;#x9891;&amp;#x6587;&amp;#x4EF6;&amp;#x76F4;&amp;#x64AD;&amp;#x63A8;&amp;#x6D41;12#&amp;#x968F;&amp;#x673A;&amp;#x64AD;&amp;#x653E;&amp;#x6DFB;&amp;#x52A0;&amp;#x7535;&amp;#x5F71;&amp;#x540">
 
 
 
@@ -104,7 +104,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Muse',
-    sidebar: {"position":"right","display":"post"},
+    sidebar: {"position":"right","display":"always"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -357,10 +357,10 @@
       
 
       
-        <p>1.安装ffmpeg<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install ffmpeg</div></pre></td></tr></table></figure></p>
-<p>2.多视频文件直播推流<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#随机播放添加电影名到视频右上角</span></div><div class="line"><span class="keyword">for</span>((;;)); <span class="keyword">do</span> i=`ls *.flv | sort -R | head -n1`  &amp;&amp; ffmpeg -re -i <span class="variable">$i</span> -acodec copy -vcodec libx264 -preset veryfast   -vf  <span class="string">"drawtext=fontsize=15:fontcolor=white:fontfile=/usr/share/fonts/TTF/ziti.TTF:text='电影名\:<span class="variable">$&#123;i%%.*&#125;</span>':x=w-tw"</span> -acodec libmp3lame -b:a 96k -ar 44100  <span class="_">-f</span> flv <span class="string">"rtmp://xl.live-send.acg.tv/live-xl/?streamname=live_19040159_8820556&amp;key=15aadc9874f098fdcd17d08f03566f02"</span>;sleep 1;<span class="keyword">done</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">其中“rtmp://xl.live-send.acg.tv/live-xl/?streamname=live\_19040159\_8820556&amp;key=15aadc9874f098fdcd17d08f03566f02”为推流地址，获取方式是开播之后rtmp地址+直播码</div></pre></td></tr></table></figure>
-<p>具体ffmpeg参数可以到官网查询<br><a href="https://ffmpeg.org/documentation.html" rel="external nofollow noopener noreferrer" target="_blank">https://ffmpeg.org/documentation.html</a></p>
+        <p>1.&#x5B89;&#x88C5;ffmpeg<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install ffmpeg</div></pre></td></tr></table></figure></p>
+<p>2.&#x591A;&#x89C6;&#x9891;&#x6587;&#x4EF6;&#x76F4;&#x64AD;&#x63A8;&#x6D41;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#&#x968F;&#x673A;&#x64AD;&#x653E;&#x6DFB;&#x52A0;&#x7535;&#x5F71;&#x540D;&#x5230;&#x89C6;&#x9891;&#x53F3;&#x4E0A;&#x89D2;</span></div><div class="line"><span class="keyword">for</span>((;;)); <span class="keyword">do</span> i=`ls *.flv | sort -R | head -n1`  &amp;&amp; ffmpeg -re -i <span class="variable">$i</span> -acodec copy -vcodec libx264 -preset veryfast   -vf  <span class="string">&quot;drawtext=fontsize=15:fontcolor=white:fontfile=/usr/share/fonts/TTF/ziti.TTF:text=&apos;&#x7535;&#x5F71;&#x540D;\:<span class="variable">${i%%.*}</span>&apos;:x=w-tw&quot;</span> -acodec libmp3lame -b:a 96k -ar 44100  <span class="_">-f</span> flv <span class="string">&quot;rtmp://xl.live-send.acg.tv/live-xl/?streamname=live_19040159_8820556&amp;key=15aadc9874f098fdcd17d08f03566f02&quot;</span>;sleep 1;<span class="keyword">done</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#x5176;&#x4E2D;&#x201C;rtmp://xl.live-send.acg.tv/live-xl/?streamname=live\_19040159\_8820556&amp;key=15aadc9874f098fdcd17d08f03566f02&#x201D;&#x4E3A;&#x63A8;&#x6D41;&#x5730;&#x5740;&#xFF0C;&#x83B7;&#x53D6;&#x65B9;&#x5F0F;&#x662F;&#x5F00;&#x64AD;&#x4E4B;&#x540E;rtmp&#x5730;&#x5740;+&#x76F4;&#x64AD;&#x7801;</div></pre></td></tr></table></figure>
+<p>&#x5177;&#x4F53;ffmpeg&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x5230;&#x5B98;&#x7F51;&#x67E5;&#x8BE2;<br><a href="https://ffmpeg.org/documentation.html" rel="external nofollow noopener noreferrer" target="_blank">https://ffmpeg.org/documentation.html</a></p>
 
       
     </div>

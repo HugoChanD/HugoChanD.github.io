@@ -84,22 +84,16 @@
 
 
 
-<meta name="description" content="树莓派自带的3.5声音接口电流声感人，淘宝买了一个usb免驱声卡
-这里纪录下raspbian 4.4系统切换声卡的方法
-查看声卡：cat /proc/asound/cards12340 [ALSA           ]: bcm2835 - bcm2835 ALSA                     bcm2835 ALSA1 [Device         ]: USB-Audio -">
+<meta name="description" content="&amp;#x6811;&amp;#x8393;&amp;#x6D3E;&amp;#x81EA;&amp;#x5E26;&amp;#x7684;3.5&amp;#x58F0;&amp;#x97F3;&amp;#x63A5;&amp;#x53E3;&amp;#x7535;&amp;#x6D41;&amp;#x58F0;&amp;#x611F;&amp;#x4EBA;&amp;#xFF0C;&amp;#x6DD8;&amp;#x5B9D;&amp;#x4E70;&amp;#x4E86;&amp;#x4E00;&amp;#x4E2A;usb&amp;#x514D;&amp;#x9A71;&amp;#">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树莓派－切换usb声卡">
 <meta property="og:url" content="http://www.hugospi.com/2016-07-27/raspberry-auto/index.html">
 <meta property="og:site_name" content="Hugo Chan">
-<meta property="og:description" content="树莓派自带的3.5声音接口电流声感人，淘宝买了一个usb免驱声卡
-这里纪录下raspbian 4.4系统切换声卡的方法
-查看声卡：cat /proc/asound/cards12340 [ALSA           ]: bcm2835 - bcm2835 ALSA                     bcm2835 ALSA1 [Device         ]: USB-Audio -">
+<meta property="og:description" content="&amp;#x6811;&amp;#x8393;&amp;#x6D3E;&amp;#x81EA;&amp;#x5E26;&amp;#x7684;3.5&amp;#x58F0;&amp;#x97F3;&amp;#x63A5;&amp;#x53E3;&amp;#x7535;&amp;#x6D41;&amp;#x58F0;&amp;#x611F;&amp;#x4EBA;&amp;#xFF0C;&amp;#x6DD8;&amp;#x5B9D;&amp;#x4E70;&amp;#x4E86;&amp;#x4E00;&amp;#x4E2A;usb&amp;#x514D;&amp;#x9A71;&amp;#">
 <meta property="og:updated_time" content="2016-07-28T02:35:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树莓派－切换usb声卡">
-<meta name="twitter:description" content="树莓派自带的3.5声音接口电流声感人，淘宝买了一个usb免驱声卡
-这里纪录下raspbian 4.4系统切换声卡的方法
-查看声卡：cat /proc/asound/cards12340 [ALSA           ]: bcm2835 - bcm2835 ALSA                     bcm2835 ALSA1 [Device         ]: USB-Audio -">
+<meta name="twitter:description" content="&amp;#x6811;&amp;#x8393;&amp;#x6D3E;&amp;#x81EA;&amp;#x5E26;&amp;#x7684;3.5&amp;#x58F0;&amp;#x97F3;&amp;#x63A5;&amp;#x53E3;&amp;#x7535;&amp;#x6D41;&amp;#x58F0;&amp;#x611F;&amp;#x4EBA;&amp;#xFF0C;&amp;#x6DD8;&amp;#x5B9D;&amp;#x4E70;&amp;#x4E86;&amp;#x4E00;&amp;#x4E2A;usb&amp;#x514D;&amp;#x9A71;&amp;#">
 
 
 
@@ -107,7 +101,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Muse',
-    sidebar: {"position":"right","display":"post"},
+    sidebar: {"position":"right","display":"always"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -360,13 +354,13 @@
       
 
       
-        <p>树莓派自带的3.5声音接口电流声感人，淘宝买了一个usb免驱声卡</p>
-<p>这里纪录下raspbian 4.4系统切换声卡的方法</p>
-<p>查看声卡：cat /proc/asound/cards<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">0 [ALSA           ]: bcm2835 - bcm2835 ALSA</div><div class="line">                     bcm2835 ALSA</div><div class="line">1 [Device         ]: USB-Audio - USB PnP Sound Device</div><div class="line">                     C-Media Electronics Inc. USB PnP Sound Device at usb-3f980000.usb-1.5.3, full s</div></pre></td></tr></table></figure></p>
-<p>可以看到两张声卡，usb-Audio就是usb声卡 </p>
-<p>编辑家目录下的 .asoundrc文件，将0改为1，修改后如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">pcm.!default &#123;</div><div class="line">         <span class="built_in">type</span> hw</div><div class="line">         card 1</div><div class="line"> &#125; </div><div class="line"> ctl.!default &#123;</div><div class="line">         <span class="built_in">type</span> hw</div><div class="line">         card 1</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
-<p>创建配置文件：/etc/asound.conf<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">pcm.!default &#123;</div><div class="line">    <span class="built_in">type</span> hw</div><div class="line">    card 1</div><div class="line">&#125;</div><div class="line"></div><div class="line">ctl.!default &#123;</div><div class="line">    <span class="built_in">type</span> hw</div><div class="line">    card 1</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>通过alsamixer命令可以调节音量`</p>
+        <p>&#x6811;&#x8393;&#x6D3E;&#x81EA;&#x5E26;&#x7684;3.5&#x58F0;&#x97F3;&#x63A5;&#x53E3;&#x7535;&#x6D41;&#x58F0;&#x611F;&#x4EBA;&#xFF0C;&#x6DD8;&#x5B9D;&#x4E70;&#x4E86;&#x4E00;&#x4E2A;usb&#x514D;&#x9A71;&#x58F0;&#x5361;</p>
+<p>&#x8FD9;&#x91CC;&#x7EAA;&#x5F55;&#x4E0B;raspbian 4.4&#x7CFB;&#x7EDF;&#x5207;&#x6362;&#x58F0;&#x5361;&#x7684;&#x65B9;&#x6CD5;</p>
+<p>&#x67E5;&#x770B;&#x58F0;&#x5361;&#xFF1A;cat /proc/asound/cards<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">0 [ALSA           ]: bcm2835 - bcm2835 ALSA</div><div class="line">                     bcm2835 ALSA</div><div class="line">1 [Device         ]: USB-Audio - USB PnP Sound Device</div><div class="line">                     C-Media Electronics Inc. USB PnP Sound Device at usb-3f980000.usb-1.5.3, full s</div></pre></td></tr></table></figure></p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E24;&#x5F20;&#x58F0;&#x5361;&#xFF0C;usb-Audio&#x5C31;&#x662F;usb&#x58F0;&#x5361; </p>
+<p>&#x7F16;&#x8F91;&#x5BB6;&#x76EE;&#x5F55;&#x4E0B;&#x7684; .asoundrc&#x6587;&#x4EF6;&#xFF0C;&#x5C06;0&#x6539;&#x4E3A;1&#xFF0C;&#x4FEE;&#x6539;&#x540E;&#x5982;&#x4E0B;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">pcm.!default {</div><div class="line">         <span class="built_in">type</span> hw</div><div class="line">         card 1</div><div class="line"> } </div><div class="line"> ctl.!default {</div><div class="line">         <span class="built_in">type</span> hw</div><div class="line">         card 1</div><div class="line"> }</div></pre></td></tr></table></figure></p>
+<p>&#x521B;&#x5EFA;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A;/etc/asound.conf<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">pcm.!default {</div><div class="line">    <span class="built_in">type</span> hw</div><div class="line">    card 1</div><div class="line">}</div><div class="line"></div><div class="line">ctl.!default {</div><div class="line">    <span class="built_in">type</span> hw</div><div class="line">    card 1</div><div class="line">}</div></pre></td></tr></table></figure></p>
+<p>&#x901A;&#x8FC7;alsamixer&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x8C03;&#x8282;&#x97F3;&#x91CF;`</p>
 
       
     </div>

@@ -107,7 +107,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Muse',
-    sidebar: {"position":"right","display":"post"},
+    sidebar: {"position":"right","display":"always"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -360,15 +360,15 @@
       
 
       
-        <p>owncloud：简单来说就是一个基于PHP的网盘</p>
-<p>需要的依赖：<br>MySQL数据库、php、数据库驱动、apache2、curl</p>
-<p>1.安装依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install apache2 php5 php5-gd php-xml-parser php5-intl php5-sqlite php5-mysql smbclient curl libcurl3 php5-curl mysql-server</div></pre></td></tr></table></figure></p>
-<p>安装过程中会提示你设置数据库密码，自己设置就可以了<br><a id="more"></a><br>2.下载安装owncloud<br>url：<a href="https://owncloud.org/install/" rel="external nofollow noopener noreferrer" target="_blank">https://owncloud.org/install/</a><br>我安装的是9.1版本</p>
-<p>配置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /var/www/html    <span class="comment">#进去网页目录</span></div><div class="line">tar jxvf owncloud-9.1.0.tar.bz2 -C  /var/www/html <span class="comment">#解压</span></div><div class="line"><span class="built_in">cd</span> /var/www/html/owncloud</div><div class="line">sudo mkdir data</div><div class="line"></div><div class="line"><span class="comment">#设置权限：</span></div><div class="line">sudo chown -R www-data:www-data data </div><div class="line">sudo chown -R www-data:www-data config </div><div class="line">sudo chown -R www-data:www-data apps</div></pre></td></tr></table></figure></p>
-<p>修改配置/etc/apache2/apache2.conf  （备份）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#修改之后：</span></div><div class="line">&lt;Directory /var/www/&gt;</div><div class="line">        Options Indexes FollowSymLinks</div><div class="line">        AllowOverride All</div><div class="line">        Require all granted</div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure></p>
-<p>重新启动下apache<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service apache2 restart</div></pre></td></tr></table></figure></p>
-<p>访问<a href="http://树莓派ip/owncloud" rel="external nofollow noopener noreferrer" target="_blank">http://树莓派ip/owncloud</a>  </p>
-<p>可以下载对应的owncloud进行云盘管理，在手机上也很方便</p>
+        <p>owncloud&#xFF1A;&#x7B80;&#x5355;&#x6765;&#x8BF4;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;PHP&#x7684;&#x7F51;&#x76D8;</p>
+<p>&#x9700;&#x8981;&#x7684;&#x4F9D;&#x8D56;&#xFF1A;<br>MySQL&#x6570;&#x636E;&#x5E93;&#x3001;php&#x3001;&#x6570;&#x636E;&#x5E93;&#x9A71;&#x52A8;&#x3001;apache2&#x3001;curl</p>
+<p>1.&#x5B89;&#x88C5;&#x4F9D;&#x8D56;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install apache2 php5 php5-gd php-xml-parser php5-intl php5-sqlite php5-mysql smbclient curl libcurl3 php5-curl mysql-server</div></pre></td></tr></table></figure></p>
+<p>&#x5B89;&#x88C5;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F1A;&#x63D0;&#x793A;&#x4F60;&#x8BBE;&#x7F6E;&#x6570;&#x636E;&#x5E93;&#x5BC6;&#x7801;&#xFF0C;&#x81EA;&#x5DF1;&#x8BBE;&#x7F6E;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;<br><a id="more"></a><br>2.&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;owncloud<br>url&#xFF1A;<a href="https://owncloud.org/install/" rel="external nofollow noopener noreferrer" target="_blank">https://owncloud.org/install/</a><br>&#x6211;&#x5B89;&#x88C5;&#x7684;&#x662F;9.1&#x7248;&#x672C;</p>
+<p>&#x914D;&#x7F6E;&#xFF1A;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /var/www/html    <span class="comment">#&#x8FDB;&#x53BB;&#x7F51;&#x9875;&#x76EE;&#x5F55;</span></div><div class="line">tar jxvf owncloud-9.1.0.tar.bz2 -C  /var/www/html <span class="comment">#&#x89E3;&#x538B;</span></div><div class="line"><span class="built_in">cd</span> /var/www/html/owncloud</div><div class="line">sudo mkdir data</div><div class="line"></div><div class="line"><span class="comment">#&#x8BBE;&#x7F6E;&#x6743;&#x9650;&#xFF1A;</span></div><div class="line">sudo chown -R www-data:www-data data </div><div class="line">sudo chown -R www-data:www-data config </div><div class="line">sudo chown -R www-data:www-data apps</div></pre></td></tr></table></figure></p>
+<p>&#x4FEE;&#x6539;&#x914D;&#x7F6E;/etc/apache2/apache2.conf  &#xFF08;&#x5907;&#x4EFD;&#xFF09;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#&#x4FEE;&#x6539;&#x4E4B;&#x540E;&#xFF1A;</span></div><div class="line">&lt;Directory /var/www/&gt;</div><div class="line">        Options Indexes FollowSymLinks</div><div class="line">        AllowOverride All</div><div class="line">        Require all granted</div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure></p>
+<p>&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x4E0B;apache<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service apache2 restart</div></pre></td></tr></table></figure></p>
+<p>&#x8BBF;&#x95EE;<a href="http://&#x6811;&#x8393;&#x6D3E;ip/owncloud" rel="external nofollow noopener noreferrer" target="_blank">http://&#x6811;&#x8393;&#x6D3E;ip/owncloud</a>  </p>
+<p>&#x53EF;&#x4EE5;&#x4E0B;&#x8F7D;&#x5BF9;&#x5E94;&#x7684;owncloud&#x8FDB;&#x884C;&#x4E91;&#x76D8;&#x7BA1;&#x7406;&#xFF0C;&#x5728;&#x624B;&#x673A;&#x4E0A;&#x4E5F;&#x5F88;&#x65B9;&#x4FBF;</p>
 
       
     </div>
