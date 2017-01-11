@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.hugospi.com/2016-12-14/VPS-Shadowsocks/</loc>
+    
+    <lastmod>2017-01-11T08:00:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.hugospi.com/2017-01-05/hexo-VPSbak/</loc>
     
     <lastmod>2017-01-05T15:20:17.000Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>http://www.hugospi.com/2016-12-19/linux-ffprobe/</loc>
     
     <lastmod>2016-12-19T03:14:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.hugospi.com/2016-12-14/VPS-Shadowsocks/</loc>
-    
-    <lastmod>2016-12-14T07:19:03.000Z</lastmod>
     
   </url>
   
