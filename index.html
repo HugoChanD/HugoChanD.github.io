@@ -281,6 +281,145 @@
             
               
                 
+                <a class="post-title-link" href="/2017-01-20/mac-WeChatRedEnvelop/" itemprop="url">
+                  IOS免越狱实现微信红包以及修改步数
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-20T09:15:35+08:00" content="2017-01-20">
+              2017-01-20
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/MAC/" itemprop="url" rel="index">
+                    <span itemprop="name">MAC</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017-01-20/mac-WeChatRedEnvelop/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017-01-20/mac-WeChatRedEnvelop/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017-01-20/mac-WeChatRedEnvelop/" class="leancloud_visitors" data-flag-title="IOS免越狱实现微信红包以及修改步数">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&#x76EE;&#x524D;&#x6709;&#x4E24;&#x4E2A;&#x5F00;&#x6E90;&#x7684;ios&#x514D;&#x8D8A;&#x72F1;&#x7EA2;&#x5305;<br><a href="https://github.com/buginux/WeChatRedEnvelop" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/buginux/WeChatRedEnvelop</a><br><a href="https://github.com/yohunl/weweChatAssitant" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/yohunl/weweChatAssitant</a><br>&#x7B2C;&#x4E00;&#x4E2A;&#x6211;&#x6B63;&#x5E38;&#x5199;&#x5165;&#x52A8;&#x6001;&#x5E93;&#x4E4B;&#x540E;&#x70B9;&#x5F00;&#x542F;&#x63D2;&#x4EF6;APP&#x5C31;&#x5D29;&#x6E83;&#xFF0C;&#x4E0D;&#x77E5;&#x9053;&#x4EC0;&#x4E48;&#x539F;&#x56E0;&#xFF0C;&#x6240;&#x4EE5;&#x7528;&#x7684;&#x662F;&#x7B2C;&#x4E8C;&#x4E2A;</p>
+<p>&#x57FA;&#x672C;&#x601D;&#x8DEF;:<br>&#x627E;&#x5230;&#x83B7;&#x53D6;&#x672A;&#x52A0;&#x5BC6;&#x7684;&#x5FAE;&#x4FE1;ipa&#xFF0C;&#x89E3;&#x538B;&#x7136;&#x540E;&#x6CE8;&#x5165;&#x52A8;&#x6001;&#x5E93;&#xFF0C;&#x6700;&#x540E;&#x6253;&#x5305;&#x7B7E;&#x540D;&#x5B89;&#x88C5;</p>
+<p>1.&#x83B7;&#x53D6;&#x672A;&#x52A0;&#x5BC6;&#x7684;&#x5FAE;&#x4FE1;ipa<br>    &#x53D1;&#x73B0;pp&#x52A9;&#x624B;&#x4E0B;&#x8F7D;&#x4E0B;&#x6765;&#x7684;6.5&#x7248;&#x672C;&#x5FAE;&#x4FE1;&#x8D8A;&#x72F1;&#x7248;&#x8FD8;&#x662F;&#x52A0;&#x5BC6;&#x72B6;&#x6001;&#xFF0C;&#x76EE;&#x524D;&#x624B;&#x4E0A;&#x53C8;&#x6CA1;&#x6709;&#x8D8A;&#x72F1;&#x8BBE;&#x5907;,&#x6240;&#x4EE5;&#x6700;&#x540E;&#x627E;&#x5230;&#x8FD9;&#x4E2A;<a href="http://ios.d.cn/apps/-25801.html" rel="external nofollow noopener noreferrer" target="_blank">http://ios.d.cn/apps/-25801.html</a><br>&#x4E0B;&#x8F7D;&#x4E4B;&#x540E;&#x89E3;&#x538B;&#x67E5;&#x770B;&#x52A0;&#x5BC6;&#x72B6;&#x6001;,&#x7136;&#x540E;&#x67E5;&#x770B; cryptid &#x6807;&#x5FD7;&#x4F4D;&#x7684;&#x503C;&#x662F;&#x5426;&#x4E3A; 1 &#xFF08;&#x5DF2;&#x52A0;&#x5BC6;&#xFF09;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">unzip wechat.ipa <span class="_">-d</span> wechat</div><div class="line"><span class="built_in">cd</span> wechat/Payload/WeChat.app</div><div class="line">otool <span class="_">-l</span> Wechat | grep crypt</div></pre></td></tr></table></figure></p>
+<p>2.&#x5236;&#x4F5C;&#x62A2;&#x7EA2;&#x5305;&#x52A8;&#x6001;&#x5E93;<br>&#x751F;&#x6210;&#x52A8;&#x6001;&#x5E93;&#x6587;&#x4EF6;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/yohunl/weweChatAssitant  </div><div class="line"><span class="built_in">cd</span> weweChatAssitant/TestTweak</div><div class="line">./build_dylib.sh</div></pre></td></tr></table></figure></p>
+<p>&#x5C06;&#x52A8;&#x6001;&#x5E93;&#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x5230;&#x5FAE;&#x4FE1;&#x76EE;&#x5F55;&#x4E0B;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp bin/universal/wechatRedEnvelop.dylib ~/Desktop/wechat/Payload/WeChat.app</div></pre></td></tr></table></figure></p>
+<p>3.&#x6CE8;&#x5165;&#x52A8;&#x6001;&#x5E93;&#x5230;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;<br>&#x7F16;&#x8BD1;&#x5B89;&#x88C5;optool&#x5B9E;&#x73B0;&#x6CE8;&#x5165;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git clone --recursive https://github.com/alexzielenski/optool.git</div><div class="line">cd optool</div><div class="line">xcodebuild -project optool.xcodeproj -configuration Release ARCHS=&quot;i386 x86_64&quot; build</div></pre></td></tr></table></figure></p>
+<p>&#x5982;&#x679C;osx 10.11&#x7F16;&#x8BD1;&#x4E0D;&#x8FC7;&#x76F4;&#x63A5;&#x5728;xcode&#x6253;&#x5F00;&#x9879;&#x76EE;&#x4FEE;&#x6539;&#x7F16;&#x8BD1;&#x7248;&#x672C;&#x76F4;&#x63A5;&#x7F16;&#x8BD1;</p>
+<p>&#x6CE8;&#x5165;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">optool install -c load -p <span class="string">&quot;@executable_path/wechatRedEnvelop.dylib&quot;</span> -t wechat/Payload/WeChat.app/WeChat</div></pre></td></tr></table></figure></p>
+<p>&#x8FD9;&#x91CC;&#x7684;@executable_path&#x8868;&#x793A;&#x7684;&#x662F;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x6240;&#x5728;&#x7684;&#x76EE;&#x5F55;,&#x548C;WeChat&#x540C;&#x7EA7;&#x76EE;&#x5F55;,&#x8BB0;&#x5F97;&#x4E4B;&#x524D;&#x8981;&#x8BB2;wechatRedEnvelop.dylib&#x62F7;&#x8D1D;&#x5230;&#x5FAE;&#x4FE1;app&#x6587;&#x4EF6;&#x5939;&#x4E0B;</p>
+<p>4.&#x7B7E;&#x540D;&#x6253;&#x5305;&#x5B89;&#x88C5;<br>&#x5229;&#x7528;ios-app-signer &#x6765;&#x5B8C;&#x6210;&#xFF0C;&#x9009;&#x62E9;&#x5FAE;&#x4FE1;app&#x6587;&#x4EF6;&#x548C;&#x7B7E;&#x540D;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;<br><a href="https://github.com/DanTheMan827/ios-app-signer/releases" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/DanTheMan827/ios-app-signer/releases</a></p>
+<p>&#x5B89;&#x88C5;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x4E00;&#x79CD;&#x662F;&#x4F7F;&#x7528; iTool &#x5DE5;&#x5177;&#x5B89;&#x88C5; ipa &#x6587;&#x4EF6;&#x3002;<br>&#x7B2C;&#x4E8C;&#x79CD;&#x5C31;&#x662F;&#x5229;&#x7528;XCode&#xFF0C;&#x5728;&#x83DC;&#x5355; - Window - Devices &#x4E2D;&#x6253;&#x5F00;&#x8BBE;&#x7F6E;&#x7A97;&#x53E3;&#x3002;&#x70B9;&#x51FB; Installed Apps &#x680F;&#x4E0B;&#x9762;&#x7684; + &#x53F7;&#x5C31;&#x53EF;&#x4EE5;&#x9009;&#x62E9; ipa &#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x5B89;&#x88C5;&#x4E86;&#x3002;</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017-01-05/hexo-VPSbak/" itemprop="url">
                   部署Hexo到vps
                 </a>
@@ -1453,138 +1592,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016-09-15/raspberry-DHT11/" itemprop="url">
-                  树莓派－接入DHT11温湿度传感器
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-15T22:50:49+08:00" content="2016-09-15">
-              2016-09-15
-            </time>
-          </span>
-
-          
-            <span class="post-category">
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
-                  <a href="/categories/树莓派/" itemprop="url" rel="index">
-                    <span itemprop="name">树莓派</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016-09-15/raspberry-DHT11/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-09-15/raspberry-DHT11/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016-09-15/raspberry-DHT11/" class="leancloud_visitors" data-flag-title="树莓派－接入DHT11温湿度传感器">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>利用DHT11温湿度传感器获取室内的温湿度，DHT11主要有三个引脚:VCC, DATA, GND<br>VCC:电源引脚3-5.5v<br>DATA:数据引脚<br>GND:接地引脚</p>
-<p>树莓派3针脚说明：<a href="http://pinout.xyz/pinout/pin2_5v_power" rel="external nofollow noopener noreferrer" target="_blank">http://pinout.xyz/pinout/pin2_5v_power</a><br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016-09-15/raspberry-DHT11/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </p></div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1628,7 +1635,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1645,7 +1652,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
