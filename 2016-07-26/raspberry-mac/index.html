@@ -656,20 +656,10 @@ SD设备文件为：/dev/disk2s1使用diskutil unmount卸载1diskutil unmount /d
       var disqus_title = "树莓派－mac系统下安装raspbian系统到sd卡";
       var disqus_url = 'http://www.hugospi.com/2016-07-26/raspberry-mac/';
 
-      function run_disqus_script(disqus_script){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
       }
 
-#      run_disqus_script('count.js');
-#      
-#        run_disqus_script('embed.js');
-#      
-	var disqus = {
-  load : function disqus(){
+     var disqus = {
+     load : function disqus(){
       if(typeof DISQUS !== 'object') {
         (function () {
         var s = document.createElement('script'); s.async = true;
