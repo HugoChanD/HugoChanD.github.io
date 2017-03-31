@@ -434,6 +434,9 @@ ngrok项目地址：https://github.com/inconshreveable/ngrok可以自行编译�
   <div class="comments" id="comments">
     
       </div>
+	<div style="text-align:center;">
+  <button class="btn" id="load-disqus" onclick="disqus.load();">加载 Disqus 评论</button>
+</div>
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
@@ -658,10 +661,23 @@ ngrok项目地址：https://github.com/inconshreveable/ngrok可以自行编译�
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
       }
 
-      run_disqus_script('count.js');
-      
-        run_disqus_script('embed.js');
-      
+#      run_disqus_script('count.js');
+#      
+#        run_disqus_script('embed.js');
+#      
+	var disqus = {
+  load : function disqus(){
+      if(typeof DISQUS !== 'object') {
+        (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        $('#load-disqus').remove(); ///加载后移除按钮
+      }
+  }
+}
     </script>
   
 
