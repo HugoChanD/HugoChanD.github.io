@@ -325,7 +325,7 @@
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
                 <a href="/2016-12-27/linux-mysql/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-12-27/linux-mysql/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016-12-27/linux-mysql/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -357,31 +357,31 @@
       
 
       
-        <p>1.&#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#x5305;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install make gcc-c++ cmake bison-devel  ncurses-devel</div></pre></td></tr></table></figure></p>
-<p>2.&#x4E0B;&#x8F7D;mysql<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget http://101.110.118.68/cdn.mysql.com/Downloads/MySQL-5.5/mysql-5.5.54.tar.gz</div><div class="line">tar -zxvf mysql-5.5.54.tar.gz</div><div class="line"><span class="built_in">cd</span> mysql-5.5.54</div></pre></td></tr></table></figure></p>
+        <p>1.安装依赖包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install make gcc-c++ cmake bison-devel  ncurses-devel</div></pre></td></tr></table></figure></p>
+<p>2.下载mysql<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget http://101.110.118.68/cdn.mysql.com/Downloads/MySQL-5.5/mysql-5.5.54.tar.gz</div><div class="line">tar -zxvf mysql-5.5.54.tar.gz</div><div class="line"><span class="built_in">cd</span> mysql-5.5.54</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<p>3.&#x7F16;&#x8BD1;&#x5B89;&#x88C5;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">cmake \</div><div class="line">-DCMAKE_INSTALL_PREFIX=/usr/<span class="built_in">local</span>/mysql \</div><div class="line">-DMYSQL_DATADIR=/usr/<span class="built_in">local</span>/mysql/data \</div><div class="line">-DSYSCONFDIR=/etc \</div><div class="line">-DWITH_MYISAM_STORAGE_ENGINE=1 \</div><div class="line">-DWITH_INNOBASE_STORAGE_ENGINE=1 \</div><div class="line">-DWITH_MEMORY_STORAGE_ENGINE=1 \</div><div class="line">-DWITH_READLINE=1 \</div><div class="line">-DMYSQL_UNIX_ADDR=/var/lib/mysql/mysql.sock \</div><div class="line">-DMYSQL_TCP_PORT=3306 \</div><div class="line">-DENABLED_LOCAL_INFILE=1 \</div><div class="line">-DWITH_PARTITION_STORAGE_ENGINE=1 \</div><div class="line">-DEXTRA_CHARSETS=all \</div><div class="line">-DDEFAULT_CHARSET=utf8 \</div><div class="line">-DDEFAULT_COLLATION=utf8_general_ci</div><div class="line"></div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure></p>
-<p>&#x7F16;&#x8BD1;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;<a href="http://dev.mysql.com/doc/refman/5.5/en/source-configuration-options.html" rel="external nofollow noopener noreferrer" target="_blank">http://dev.mysql.com/doc/refman/5.5/en/source-configuration-options.html</a></p>
-<p>4.&#x914D;&#x7F6E;Mysql</p>
-<p>&#x521B;&#x5EFA;mysql&#x7528;&#x6237;&#x4E0E;&#x7EC4;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">groupadd mysql</div><div class="line">useradd -g mysql mysql</div></pre></td></tr></table></figure></p>
-<p>&#x4FEE;&#x6539;/usr/local/mysql&#x6743;&#x9650;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chown -R mysql:mysql /usr/<span class="built_in">local</span>/mysql</div></pre></td></tr></table></figure></p>
-<p>&#x521D;&#x59CB;&#x5316;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/mysql</div><div class="line"><span class="comment">#&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x548C;&#x8868;</span></div><div class="line">scripts/mysql_install_db --basedir=/usr/<span class="built_in">local</span>/mysql --datadir=/usr/<span class="built_in">local</span>/mysql/data --user=mysql</div></pre></td></tr></table></figure></p>
-<p>&#x542F;&#x52A8;Mysql<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#&#x6DFB;&#x52A0;&#x670D;&#x52A1;&#xFF0C;&#x8BBE;&#x7F6E;&#x5F00;&#x673A;&#x542F;&#x52A8;</span></div><div class="line">cp support-files/mysql.server /etc/init.d/mysql</div><div class="line">chkconfig mysql on</div><div class="line">service mysql start</div></pre></td></tr></table></figure></p>
-<p>MySQL&#x542F;&#x52A8;&#x6210;&#x529F;&#x540E;&#xFF0C;root&#x9ED8;&#x8BA4;&#x6CA1;&#x6709;&#x5BC6;&#x7801;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8BBE;&#x7F6E;root&#x5BC6;&#x7801;&#x3002;</p>
-<p>&#x8BBE;&#x7F6E;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5148;&#x8BBE;&#x7F6E;PATH&#xFF0C;&#x8981;&#x4E0D;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x8C03;&#x7528;mysql</p>
-<p>&#x4FEE;&#x6539;/etc/profile&#x6587;&#x4EF6;&#xFF0C;&#x5728;&#x6587;&#x4EF6;&#x672B;&#x5C3E;&#x6DFB;&#x52A0;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">PATH=/usr/<span class="built_in">local</span>/mysql/bin:<span class="variable">$PATH</span></div><div class="line"><span class="built_in">export</span> PATH</div></pre></td></tr></table></figure></p>
-<p>&#x914D;&#x7F6E;&#x751F;&#x6548;</p>
+<p>3.编译安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">cmake \</div><div class="line">-DCMAKE_INSTALL_PREFIX=/usr/<span class="built_in">local</span>/mysql \</div><div class="line">-DMYSQL_DATADIR=/usr/<span class="built_in">local</span>/mysql/data \</div><div class="line">-DSYSCONFDIR=/etc \</div><div class="line">-DWITH_MYISAM_STORAGE_ENGINE=1 \</div><div class="line">-DWITH_INNOBASE_STORAGE_ENGINE=1 \</div><div class="line">-DWITH_MEMORY_STORAGE_ENGINE=1 \</div><div class="line">-DWITH_READLINE=1 \</div><div class="line">-DMYSQL_UNIX_ADDR=/var/lib/mysql/mysql.sock \</div><div class="line">-DMYSQL_TCP_PORT=3306 \</div><div class="line">-DENABLED_LOCAL_INFILE=1 \</div><div class="line">-DWITH_PARTITION_STORAGE_ENGINE=1 \</div><div class="line">-DEXTRA_CHARSETS=all \</div><div class="line">-DDEFAULT_CHARSET=utf8 \</div><div class="line">-DDEFAULT_COLLATION=utf8_general_ci</div><div class="line"></div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure></p>
+<p>编译参数说明：<a href="http://dev.mysql.com/doc/refman/5.5/en/source-configuration-options.html" rel="external nofollow noopener noreferrer" target="_blank">http://dev.mysql.com/doc/refman/5.5/en/source-configuration-options.html</a></p>
+<p>4.配置Mysql</p>
+<p>创建mysql用户与组<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">groupadd mysql</div><div class="line">useradd -g mysql mysql</div></pre></td></tr></table></figure></p>
+<p>修改/usr/local/mysql权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chown -R mysql:mysql /usr/<span class="built_in">local</span>/mysql</div></pre></td></tr></table></figure></p>
+<p>初始化<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/mysql</div><div class="line"><span class="comment">#创建数据库和表</span></div><div class="line">scripts/mysql_install_db --basedir=/usr/<span class="built_in">local</span>/mysql --datadir=/usr/<span class="built_in">local</span>/mysql/data --user=mysql</div></pre></td></tr></table></figure></p>
+<p>启动Mysql<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#添加服务，设置开机启动</span></div><div class="line">cp support-files/mysql.server /etc/init.d/mysql</div><div class="line">chkconfig mysql on</div><div class="line">service mysql start</div></pre></td></tr></table></figure></p>
+<p>MySQL启动成功后，root默认没有密码，我们需要设置root密码。</p>
+<p>设置之前，我们需要先设置PATH，要不不能直接调用mysql</p>
+<p>修改/etc/profile文件，在文件末尾添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">PATH=/usr/<span class="built_in">local</span>/mysql/bin:<span class="variable">$PATH</span></div><div class="line"><span class="built_in">export</span> PATH</div></pre></td></tr></table></figure></p>
+<p>配置生效</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> /etc/profile</div></pre></td></tr></table></figure>
-<p>&#x6267;&#x884C;&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x4FEE;&#x6539;root&#x5BC6;&#x7801;</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql -uroot  </div><div class="line">mysql&gt; SET PASSWORD = PASSWORD(<span class="string">&apos;123456&apos;</span>);</div></pre></td></tr></table></figure>
-<p>&#x82E5;&#x8981;&#x8BBE;&#x7F6E;root&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x8FDC;&#x7A0B;&#x8BBF;&#x95EE;&#xFF0C;&#x6267;&#x884C;</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO <span class="string">&apos;root&apos;</span>@<span class="string">&apos;172.16.%&apos;</span> IDENTIFIED BY <span class="string">&apos;password&apos;</span> WITH GRANT OPTION;</div></pre></td></tr></table></figure>
-<p>&#x914D;&#x7F6E;&#x9632;&#x706B;&#x5899;<br>&#x9632;&#x706B;&#x5899;&#x7684;3306&#x7AEF;&#x53E3;&#x9ED8;&#x8BA4;&#x6CA1;&#x6709;&#x5F00;&#x542F;&#xFF0C;&#x82E5;&#x8981;&#x8FDC;&#x7A0B;&#x8BBF;&#x95EE;&#xFF0C;&#x9700;&#x8981;&#x5F00;&#x542F;&#x8FD9;&#x4E2A;&#x7AEF;&#x53E3;</p>
-<p>&#x6253;&#x5F00;/etc/sysconfig/iptables</p>
-<p>&#x5728;&#x201C;-A INPUT &#x2013;m state &#x2013;state NEW &#x2013;m tcp &#x2013;p &#x2013;dport 22 &#x2013;j ACCEPT&#x201D;&#xFF0C;&#x4E0B;&#x6DFB;&#x52A0;&#xFF1A;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-A INPUT -m state --state NEW -m tcp -p -dport 3306 -j ACCEPT</div></pre></td></tr></table></figure></p>
-<p>&#x7136;&#x540E;&#x4FDD;&#x5B58;&#xFF0C;&#x5E76;&#x5173;&#x95ED;&#x8BE5;&#x6587;&#x4EF6;&#xFF0C;&#x5728;&#x7EC8;&#x7AEF;&#x5185;&#x8FD0;&#x884C;&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x5237;&#x65B0;&#x9632;&#x706B;&#x5899;&#x914D;&#x7F6E;&#xFF1A;</p>
+<p>执行下面的命令修改root密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql -uroot  </div><div class="line">mysql&gt; SET PASSWORD = PASSWORD(<span class="string">'123456'</span>);</div></pre></td></tr></table></figure>
+<p>若要设置root用户可以远程访问，执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO <span class="string">'root'</span>@<span class="string">'172.16.%'</span> IDENTIFIED BY <span class="string">'password'</span> WITH GRANT OPTION;</div></pre></td></tr></table></figure>
+<p>配置防火墙<br>防火墙的3306端口默认没有开启，若要远程访问，需要开启这个端口</p>
+<p>打开/etc/sysconfig/iptables</p>
+<p>在“-A INPUT –m state –state NEW –m tcp –p –dport 22 –j ACCEPT”，下添加：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-A INPUT -m state --state NEW -m tcp -p -dport 3306 -j ACCEPT</div></pre></td></tr></table></figure></p>
+<p>然后保存，并关闭该文件，在终端内运行下面的命令，刷新防火墙配置：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service iptables restart</div></pre></td></tr></table></figure>
-<p>OK&#xFF0C;&#x4E00;&#x5207;&#x914D;&#x7F6E;&#x5B8C;&#x6BD5;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x4F60;&#x7684;MySQL&#x4E86;~</p>
+<p>OK，一切配置完毕，你可以访问你的MySQL了~</p>
 
       
     </div>
@@ -449,7 +449,11 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016-12-27/linux-mysql/" data-title="编译安装Mysql(转载)" data-url="http://www.hugospi.com/2016-12-27/linux-mysql/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -651,30 +655,30 @@
 
   
 
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"hugochan"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
 
 
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hugochan';
+      var disqus_identifier = '2016-12-27/linux-mysql/';
+      var disqus_title = "编译安装Mysql(转载)";
+      var disqus_url = 'http://www.hugospi.com/2016-12-27/linux-mysql/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
 
 
 

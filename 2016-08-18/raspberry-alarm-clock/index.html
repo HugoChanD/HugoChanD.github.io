@@ -328,7 +328,7 @@
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
                 <a href="/2016-08-18/raspberry-alarm-clock/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-08-18/raspberry-alarm-clock/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016-08-18/raspberry-alarm-clock/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -360,18 +360,18 @@
       
 
       
-        <p>&#x8282;&#x5047;&#x65E5;&#x95F9;&#x949F;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x901A;&#x8FC7;&#x8FD4;&#x56DE;&#x8282;&#x5047;&#x65E5;&#x6570;&#x636E;&#x5B9A;&#x65F6;&#x64AD;&#x653E;&#x97F3;&#x4E50;</p>
-<p>1.&#x6CE8;&#x518C;&#x5E10;&#x53F7;&#x83B7;&#x53D6;api&#x8BA4;&#x8BC1;&#x4FE1;&#x606F;<br>&#x8282;&#x5047;&#x65E5;&#x6570;&#x636E;api:<a href="https://www.showapi.com/api/lookPoint/894" rel="external nofollow noopener noreferrer" target="_blank">https://www.showapi.com/api/lookPoint/894</a></p>
-<p>&#x8FD4;&#x56DE;&#x6570;&#x636E;&#x5B9E;&#x4F8B;&#xFF1A;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">    <span class="string">&quot;showapi_res_code&quot;</span>: 0,</div><div class="line">    <span class="string">&quot;showapi_res_error&quot;</span>: <span class="string">&quot;&quot;</span>,</div><div class="line">    <span class="string">&quot;showapi_res_body&quot;</span>: {</div><div class="line">        <span class="string">&quot;begin&quot;</span>: <span class="string">&quot;20161001&quot;</span>,</div><div class="line">        <span class="string">&quot;cn&quot;</span>: <span class="string">&quot;&#x5468;&#x516D;&quot;</span>,</div><div class="line">        <span class="string">&quot;day&quot;</span>: <span class="string">&quot;20161001&quot;</span>,</div><div class="line">        <span class="string">&quot;en&quot;</span>: <span class="string">&quot;Saturday&quot;</span>,</div><div class="line">        <span class="string">&quot;end&quot;</span>: <span class="string">&quot;20161007&quot;</span>,</div><div class="line">        <span class="string">&quot;holiday&quot;</span>: <span class="string">&quot;&#x56FD;&#x5E86;&#x8282;&quot;</span>,</div><div class="line">        <span class="string">&quot;holiday_remark&quot;</span>: <span class="string">&quot;10&#x6708;1&#x65E5;&#x81F3;7&#x65E5;&#x653E;&#x5047;&#x8C03;&#x4F11;&#xFF0C;&#x5171;7&#x5929;&#x3002;10&#x6708;8&#x65E5;&#xFF08;&#x661F;&#x671F;&#x516D;&#xFF09;&#x3001;10&#x6708;9&#x65E5;&#xFF08;&#x661F;&#x671F;&#x65E5;&#xFF09;&#x4E0A;&#x73ED;&#x3002;&quot;</span>,</div><div class="line">        <span class="string">&quot;ret_code&quot;</span>: 0,</div><div class="line">        <span class="string">&quot;type&quot;</span>: <span class="string">&quot;3&quot;</span>,</div><div class="line">        <span class="string">&quot;weekDay&quot;</span>: 6</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure></p>
+        <p>节假日闹钟，其实就是通过返回节假日数据定时播放音乐</p>
+<p>1.注册帐号获取api认证信息<br>节假日数据api:<a href="https://www.showapi.com/api/lookPoint/894" rel="external nofollow noopener noreferrer" target="_blank">https://www.showapi.com/api/lookPoint/894</a></p>
+<p>返回数据实例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"showapi_res_code"</span>: 0,</div><div class="line">    <span class="string">"showapi_res_error"</span>: <span class="string">""</span>,</div><div class="line">    <span class="string">"showapi_res_body"</span>: &#123;</div><div class="line">        <span class="string">"begin"</span>: <span class="string">"20161001"</span>,</div><div class="line">        <span class="string">"cn"</span>: <span class="string">"周六"</span>,</div><div class="line">        <span class="string">"day"</span>: <span class="string">"20161001"</span>,</div><div class="line">        <span class="string">"en"</span>: <span class="string">"Saturday"</span>,</div><div class="line">        <span class="string">"end"</span>: <span class="string">"20161007"</span>,</div><div class="line">        <span class="string">"holiday"</span>: <span class="string">"国庆节"</span>,</div><div class="line">        <span class="string">"holiday_remark"</span>: <span class="string">"10月1日至7日放假调休，共7天。10月8日（星期六）、10月9日（星期日）上班。"</span>,</div><div class="line">        <span class="string">"ret_code"</span>: 0,</div><div class="line">        <span class="string">"type"</span>: <span class="string">"3"</span>,</div><div class="line">        <span class="string">"weekDay"</span>: 6</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<p>&#x8FD9;&#x91CC;&#x6211;&#x53EA;&#x7528;&#x5230;type&#x5B57;&#x6BB5;</p>
-<p>&#x540D;&#x79F0;    &#x7C7B;&#x578B;    &#x793A;&#x4F8B;&#x503C;       &#x63CF;&#x8FF0;<br>day    String    20161001    &#x67E5;&#x8BE2;&#x7684;&#x65E5;&#x671F;<br>weekDay    Number    6            &#x661F;&#x671F;&#x51E0;&#x7684;&#x6570;&#x5B57;<br>cn    String    &#x5468;&#x516D;            &#x661F;&#x671F;&#x51E0;&#x7684;&#x4E2D;&#x6587;&#x540D;<br>en    String    Saturday    &#x661F;&#x671F;&#x51E0;&#x7684;&#x82F1;&#x6587;&#x540D;<br>holiday    String    &#x56FD;&#x5E86;&#x8282;            &#x8282;&#x65E5;&#x540D;&#x79F0;&#xFF0C;&#x5DE5;&#x4F5C;&#x65E5;&#x65F6;&#x663E;&#x793A;&#x201C;&#x65E0;&#x201D;&#xFF0C;&#x5468;&#x672B;&#x65F6;&#x663E;&#x793A;&#x201C;&#x5468;&#x672B;&#x201D;&#xFF0C;&#x8282;&#x65E5;&#x65F6;&#x663E;&#x793A;&#x8282;&#x65E5;&#x540D;&#x79F0;<br>holiday_remark    String      10&#x6708;1&#x65E5;&#x81F3;7&#x65E5;&#x653E;&#x5047;&#x8C03;&#x4F11;&#xFF0C;&#x5171;7&#x5929;&#x3002;10&#x6708;8&#x65E5;&#xFF08;&#x661F;&#x671F;&#x516D;&#xFF09;&#x3001;10&#x6708;9&#x65E5;&#xFF08;&#x661F;&#x671F;&#x65E5;&#xFF09;&#x4E0A;&#x73ED;&#x3002;    &#x8282;&#x65E5;&#x5907;&#x6CE8;<br>type    String    1            1&#x4E3A;&#x5DE5;&#x4F5C;&#x65E5;&#xFF0C;2&#x4E3A;&#x5468;&#x672B;&#xFF0C;3&#x4E3A;&#x8282;&#x5047;&#x65E5;<br>begin    String    20161001    &#x8282;&#x65E5;&#x6216;&#x5468;&#x672B;&#x5F00;&#x59CB;&#x65F6;&#x95F4;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x5DE5;&#x4F5C;&#x65E5;&#xFF0C;&#x6B64;&#x5B57;&#x6BB5;&#x4E3A;&#x7A7A;&#x4E32;<br>end    String    20161007    &#x8282;&#x65E5;&#x6216;&#x5468;&#x672B;&#x7ED3;&#x675F;&#x65F6;&#x95F4;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x5DE5;&#x4F5C;&#x65E5;&#xFF0C;&#x6B64;&#x5B57;&#x6BB5;&#x4E3A;&#x7A7A;&#x4E32;</p>
-<p>2.&#x5B89;&#x88C5;&#x76F8;&#x5173;&#x4F9D;&#x8D56;</p>
+<p>这里我只用到type字段</p>
+<p>名称    类型    示例值       描述<br>day    String    20161001    查询的日期<br>weekDay    Number    6            星期几的数字<br>cn    String    周六            星期几的中文名<br>en    String    Saturday    星期几的英文名<br>holiday    String    国庆节            节日名称，工作日时显示“无”，周末时显示“周末”，节日时显示节日名称<br>holiday_remark    String      10月1日至7日放假调休，共7天。10月8日（星期六）、10月9日（星期日）上班。    节日备注<br>type    String    1            1为工作日，2为周末，3为节假日<br>begin    String    20161001    节日或周末开始时间，如果是工作日，此字段为空串<br>end    String    20161007    节日或周末结束时间，如果是工作日，此字段为空串</p>
+<p>2.安装相关依赖</p>
 <p>mpg123<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install mpg123</div></pre></td></tr></table></figure></p>
-<p>&#x65B0;&#x5EFA;music&#x6587;&#x4EF6;&#x5939;&#x5B58;&#x653E;&#x97F3;&#x4E50;,&#x97F3;&#x4E50;&#x6587;&#x4EF6;&#x6211;&#x7528;music1.mp3,music2.mp3&#x683C;&#x5F0F;&#x547D;&#x540D;&#xFF0C;&#x540E;&#x9762;&#x751F;&#x6210;&#x968F;&#x673A;&#x6570;&#x968F;&#x673A;&#x64AD;&#x653E;&#x97F3;&#x4E50;&#x6587;&#x4EF6;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir music</div><div class="line">touch alarm-clock.py <span class="comment">#&#x65B0;&#x5EFA;python&#x6587;&#x4EF6;</span></div></pre></td></tr></table></figure></p>
-<p>python&#x6587;&#x4EF6;&#xFF1A;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">import os</div><div class="line">import sys</div><div class="line">from subprocess import call</div><div class="line">from urllib import    request, parse</div><div class="line">import json</div><div class="line">import random</div><div class="line"></div><div class="line"><span class="comment">#&#x8282;&#x5047;&#x65E5;&#x6570;&#x636E;</span></div><div class="line">def jjrdate():</div><div class="line">    showapi_appid=<span class="string">&quot;apiid&quot;</span>  <span class="comment">#appid</span></div><div class="line">    showapi_sign=<span class="string">&quot;api_sign&quot;</span>   <span class="comment">#api_sign</span></div><div class="line">    url=<span class="string">&quot;http://route.showapi.com/894-1&quot;</span></div><div class="line">    send_data = parse.urlencode([</div><div class="line">    (<span class="string">&apos;showapi_appid&apos;</span>, showapi_appid)</div><div class="line">    ,(<span class="string">&apos;showapi_sign&apos;</span>, showapi_sign)</div><div class="line">     ,(<span class="string">&apos;day&apos;</span>, <span class="string">&quot;&quot;</span>)</div><div class="line">     </div><div class="line">  ])</div><div class="line"> </div><div class="line">    req = request.Request(url)</div><div class="line">    with request.urlopen(req, data=send_data.encode(<span class="string">&apos;utf-8&apos;</span>)) as f:</div><div class="line">      str_res= f.read().decode(<span class="string">&apos;utf-8&apos;</span>)</div><div class="line">      svb_res=json.loads(str_res)</div><div class="line">      date=svb_res[<span class="string">&quot;showapi_res_body&quot;</span>]</div><div class="line">    <span class="built_in">return</span> date</div><div class="line"></div><div class="line"><span class="comment">#&#x95F9;&#x949F;</span></div><div class="line">def aclock():</div><div class="line">        </div><div class="line">    jdate = jjrdate()</div><div class="line">    gzr = int(jdate[<span class="string">&quot;type&quot;</span>])</div><div class="line"></div><div class="line"><span class="comment">#&#x5224;&#x65AD;&#x662F;&#x5426;&#x5DE5;&#x4F5C;&#x65E5;</span></div><div class="line">    <span class="keyword">if</span> gzr == 1:</div><div class="line">        <span class="built_in">return</span>_code = call(<span class="string">&quot;/usr/bin/mpg123 ./music/music&quot;</span> + str(random.randint(1,4)) + <span class="string">&quot;.mp3 &quot;</span>, shell=True)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__==<span class="string">&apos;__main__&apos;</span>: </div><div class="line">    aclock()</div></pre></td></tr></table></figure></p>
+<p>新建music文件夹存放音乐,音乐文件我用music1.mp3,music2.mp3格式命名，后面生成随机数随机播放音乐文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir music</div><div class="line">touch alarm-clock.py <span class="comment">#新建python文件</span></div></pre></td></tr></table></figure></p>
+<p>python文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">import os</div><div class="line">import sys</div><div class="line">from subprocess import call</div><div class="line">from urllib import    request, parse</div><div class="line">import json</div><div class="line">import random</div><div class="line"></div><div class="line"><span class="comment">#节假日数据</span></div><div class="line">def jjrdate():</div><div class="line">    showapi_appid=<span class="string">"apiid"</span>  <span class="comment">#appid</span></div><div class="line">    showapi_sign=<span class="string">"api_sign"</span>   <span class="comment">#api_sign</span></div><div class="line">    url=<span class="string">"http://route.showapi.com/894-1"</span></div><div class="line">    send_data = parse.urlencode([</div><div class="line">    (<span class="string">'showapi_appid'</span>, showapi_appid)</div><div class="line">    ,(<span class="string">'showapi_sign'</span>, showapi_sign)</div><div class="line">     ,(<span class="string">'day'</span>, <span class="string">""</span>)</div><div class="line">     </div><div class="line">  ])</div><div class="line"> </div><div class="line">    req = request.Request(url)</div><div class="line">    with request.urlopen(req, data=send_data.encode(<span class="string">'utf-8'</span>)) as f:</div><div class="line">      str_res= f.read().decode(<span class="string">'utf-8'</span>)</div><div class="line">      svb_res=json.loads(str_res)</div><div class="line">      date=svb_res[<span class="string">"showapi_res_body"</span>]</div><div class="line">    <span class="built_in">return</span> date</div><div class="line"></div><div class="line"><span class="comment">#闹钟</span></div><div class="line">def aclock():</div><div class="line">        </div><div class="line">    jdate = jjrdate()</div><div class="line">    gzr = int(jdate[<span class="string">"type"</span>])</div><div class="line"></div><div class="line"><span class="comment">#判断是否工作日</span></div><div class="line">    <span class="keyword">if</span> gzr == 1:</div><div class="line">        <span class="built_in">return</span>_code = call(<span class="string">"/usr/bin/mpg123 ./music/music"</span> + str(random.randint(1,4)) + <span class="string">".mp3 "</span>, shell=True)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>: </div><div class="line">    aclock()</div></pre></td></tr></table></figure></p>
 <p>git:<a href="https://github.com/HugoChanD/Raspberry-alarm-clock" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/HugoChanD/Raspberry-alarm-clock</a></p>
-<p>&#x6DFB;&#x52A0;crontab &#x6BCF;&#x5929;7:20&#x6267;&#x884C;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">20 7 * * * sudo python3 /home/pi/python/alarm-clock.py</div></pre></td></tr></table></figure></p>
+<p>添加crontab 每天7:20执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">20 7 * * * sudo python3 /home/pi/python/alarm-clock.py</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -439,7 +439,11 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016-08-18/raspberry-alarm-clock/" data-title="树莓派－节假日闹钟" data-url="http://www.hugospi.com/2016-08-18/raspberry-alarm-clock/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -641,30 +645,30 @@
 
   
 
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"hugochan"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
 
 
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hugochan';
+      var disqus_identifier = '2016-08-18/raspberry-alarm-clock/';
+      var disqus_title = "树莓派－节假日闹钟";
+      var disqus_url = 'http://www.hugospi.com/2016-08-18/raspberry-alarm-clock/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
 
 
 

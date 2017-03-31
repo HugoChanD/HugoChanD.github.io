@@ -325,7 +325,7 @@
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
                 <a href="/2016-12-19/linux-ffprobe/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-12-19/linux-ffprobe/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016-12-19/linux-ffprobe/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -357,21 +357,21 @@
       
 
       
-        <p>ffmpeg&#x529F;&#x80FD;&#x5F3A;&#x5927;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x6765;&#x5BF9;&#x97F3;&#x89C6;&#x9891;&#x8FDB;&#x884C;&#x5904;&#x7406;</p>
-<p>1.OSX&#x4E0B;&#x5B89;&#x88C5;ffmpeg<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install ffmpeg</div></pre></td></tr></table></figure></p>
+        <p>ffmpeg功能强大，可以通过命令行来对音视频进行处理</p>
+<p>1.OSX下安装ffmpeg<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install ffmpeg</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<p>2.&#x4F7F;&#x7528;ffprobe&#x83B7;&#x53D6;&#x89C6;&#x9891;&#x6587;&#x4EF6;&#x4FE1;&#x606F;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ffprobe -print_format json -show_format -show_streams -i ./video/file.mp4</div></pre></td></tr></table></figure></p>
-<pre><code>&#x5176;&#x4E2D;&#xFF1A;  
+<p>2.使用ffprobe获取视频文件信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ffprobe -print_format json -show_format -show_streams -i ./video/file.mp4</div></pre></td></tr></table></figure></p>
+<pre><code>其中：  
 
--print_format json&#xFF08;&#x4EE5;json&#x683C;&#x5F0F;&#x8F93;&#x51FA;&#xFF09;&#xFF0C; 
+-print_format json（以json格式输出）， 
 
--show_format&#xFF08;&#x8F93;&#x51FA;&#x5C01;&#x88C5;&#x683C;&#x5F0F;&#x4FE1;&#x606F;&#xFF09;&#xFF0C;
+-show_format（输出封装格式信息），
 
--show_streams&#xFF08;&#x8F93;&#x51FA;&#x6D41;&#x4FE1;&#x606F;)
+-show_streams（输出流信息)
 
--i ./video/file.mp4&#xFF08;&#x8F93;&#x5165;&#x6587;&#x4EF6;&#xFF09;
-</code></pre><p>3.&#x67E5;&#x627E;&#x5206;&#x8FA8;&#x7387;&#x5927;&#x4E8E;900&#x7684;&#x6587;&#x4EF6;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> *;<span class="keyword">do</span> ffprobe -v quiet -print_format json -show_format -show_streams -i <span class="variable">$i</span>|<span class="keyword">if</span> [ $(jq <span class="string">&apos;.streams[0].width&apos;</span>) <span class="_">-gt</span> <span class="string">&quot;900&quot;</span> ];<span class="keyword">then</span>  <span class="built_in">echo</span> <span class="variable">$i</span> &gt;&gt; file1 ;<span class="keyword">fi</span>;<span class="keyword">done</span></div></pre></td></tr></table></figure></p>
-<pre><code>&#x5176;&#x4E2D;jq&#x4E3A;json&#x89E3;&#x6790;&#x5DE5;&#x5177;
+-i ./video/file.mp4（输入文件）
+</code></pre><p>3.查找分辨率大于900的文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> *;<span class="keyword">do</span> ffprobe -v quiet -print_format json -show_format -show_streams -i <span class="variable">$i</span>|<span class="keyword">if</span> [ $(jq <span class="string">'.streams[0].width'</span>) <span class="_">-gt</span> <span class="string">"900"</span> ];<span class="keyword">then</span>  <span class="built_in">echo</span> <span class="variable">$i</span> &gt;&gt; file1 ;<span class="keyword">fi</span>;<span class="keyword">done</span></div></pre></td></tr></table></figure></p>
+<pre><code>其中jq为json解析工具
 </code></pre>
       
     </div>
@@ -439,7 +439,11 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016-12-19/linux-ffprobe/" data-title="ffprobe查找视频分辨率大于900的文件" data-url="http://www.hugospi.com/2016-12-19/linux-ffprobe/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -641,30 +645,30 @@
 
   
 
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"hugochan"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
 
 
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hugochan';
+      var disqus_identifier = '2016-12-19/linux-ffprobe/';
+      var disqus_title = "ffprobe查找视频分辨率大于900的文件";
+      var disqus_url = 'http://www.hugospi.com/2016-12-19/linux-ffprobe/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
 
 
 

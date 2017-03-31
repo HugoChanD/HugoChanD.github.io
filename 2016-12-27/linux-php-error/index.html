@@ -84,19 +84,22 @@
 
 
 
-<meta name="description" content="&amp;#x7F16;&amp;#x8BD1;php make&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x51FA;&amp;#x73B0;&amp;#x4EE5;&amp;#x4E0B;&amp;#x9519;&amp;#x8BEF;12collect2: ld returned 1 exit statusmake: *** [sapi/cli/php] Error 1
-google&amp;#x4E4B;&amp;#xFF0C;&amp;#x4EE5;&amp;#x6">
+<meta name="description" content="编译php make的时候出现以下错误12collect2: ld returned 1 exit statusmake: *** [sapi/cli/php] Error 1
+google之，以此记录下
+在安裝 PHP 到系统中时要是发生「undefined reference to libiconv_open’」之类的错误信息，那表示在「./configure 」沒抓好一些环境变数值。错误发生">
 <meta property="og:type" content="article">
 <meta property="og:title" content="编译php出现 [sapi/cli/php] Error 1 解决办法">
 <meta property="og:url" content="http://www.hugospi.com/2016-12-27/linux-php-error/index.html">
 <meta property="og:site_name" content="Hugo Chan">
-<meta property="og:description" content="&amp;#x7F16;&amp;#x8BD1;php make&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x51FA;&amp;#x73B0;&amp;#x4EE5;&amp;#x4E0B;&amp;#x9519;&amp;#x8BEF;12collect2: ld returned 1 exit statusmake: *** [sapi/cli/php] Error 1
-google&amp;#x4E4B;&amp;#xFF0C;&amp;#x4EE5;&amp;#x6">
+<meta property="og:description" content="编译php make的时候出现以下错误12collect2: ld returned 1 exit statusmake: *** [sapi/cli/php] Error 1
+google之，以此记录下
+在安裝 PHP 到系统中时要是发生「undefined reference to libiconv_open’」之类的错误信息，那表示在「./configure 」沒抓好一些环境变数值。错误发生">
 <meta property="og:updated_time" content="2016-12-27T01:57:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编译php出现 [sapi/cli/php] Error 1 解决办法">
-<meta name="twitter:description" content="&amp;#x7F16;&amp;#x8BD1;php make&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x51FA;&amp;#x73B0;&amp;#x4EE5;&amp;#x4E0B;&amp;#x9519;&amp;#x8BEF;12collect2: ld returned 1 exit statusmake: *** [sapi/cli/php] Error 1
-google&amp;#x4E4B;&amp;#xFF0C;&amp;#x4EE5;&amp;#x6">
+<meta name="twitter:description" content="编译php make的时候出现以下错误12collect2: ld returned 1 exit statusmake: *** [sapi/cli/php] Error 1
+google之，以此记录下
+在安裝 PHP 到系统中时要是发生「undefined reference to libiconv_open’」之类的错误信息，那表示在「./configure 」沒抓好一些环境变数值。错误发生">
 
 
 
@@ -325,7 +328,7 @@ google&amp;#x4E4B;&amp;#xFF0C;&amp;#x4EE5;&amp;#x6">
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
                 <a href="/2016-12-27/linux-php-error/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-12-27/linux-php-error/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016-12-27/linux-php-error/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -357,11 +360,11 @@ google&amp;#x4E4B;&amp;#xFF0C;&amp;#x4EE5;&amp;#x6">
       
 
       
-        <p>&#x7F16;&#x8BD1;php make&#x7684;&#x65F6;&#x5019;&#x51FA;&#x73B0;&#x4EE5;&#x4E0B;&#x9519;&#x8BEF;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">collect2: ld returned 1 <span class="built_in">exit</span> status</div><div class="line">make: *** [sapi/cli/php] Error 1</div></pre></td></tr></table></figure></p>
-<p>google&#x4E4B;&#xFF0C;&#x4EE5;&#x6B64;&#x8BB0;&#x5F55;&#x4E0B;</p>
-<p>&#x5728;&#x5B89;&#x88DD; PHP &#x5230;&#x7CFB;&#x7EDF;&#x4E2D;&#x65F6;&#x8981;&#x662F;&#x53D1;&#x751F;&#x300C;undefined reference to libiconv_open&#x2019;&#x300D;&#x4E4B;&#x7C7B;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF0C;<br>&#x90A3;&#x8868;&#x793A;&#x5728;&#x300C;./configure &#x300D;&#x6C92;&#x6293;&#x597D;&#x4E00;&#x4E9B;&#x73AF;&#x5883;&#x53D8;&#x6570;&#x503C;&#x3002;&#x9519;&#x8BEF;&#x53D1;&#x751F;&#x70B9;&#x5728;&#x5EFA;&#x7ACB;&#x300C;-o sapi/cli/php&#x300D;&#x662F;&#x51FA;&#x9519;&#xFF0C;<br>&#x6CA1;&#x7D66;&#x5230;&#x8981; link &#x7684; iconv &#x51FD;&#x5F0F;&#x5E93;&#x53C2;&#x6570;&#x3002; </p>
-<p>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;</p>
-<p>&#x7F16;&#x8F91;Makefile &#x67E5;&#x627E;&#x7C7B;&#x4F3C; EXTRA_LIBS = &#x2026;.. -lcrypt &#x5728;&#x6700;&#x540E;&#x52A0;&#x4E0A; -liconv&#xFF0C;&#x4F8B;&#x5982;:<br>EXTRA_LIBS = &#x2026;.. -lcrypt -liconv &#x7136;&#x540E;&#x91CD;&#x65B0;&#x518D;&#x6B21; make &#x5373;&#x53EF;&#x3002;</p>
+        <p>编译php make的时候出现以下错误<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">collect2: ld returned 1 <span class="built_in">exit</span> status</div><div class="line">make: *** [sapi/cli/php] Error 1</div></pre></td></tr></table></figure></p>
+<p>google之，以此记录下</p>
+<p>在安裝 PHP 到系统中时要是发生「undefined reference to libiconv_open’」之类的错误信息，<br>那表示在「./configure 」沒抓好一些环境变数值。错误发生点在建立「-o sapi/cli/php」是出错，<br>没給到要 link 的 iconv 函式库参数。 </p>
+<p>解决方法：</p>
+<p>编辑Makefile 查找类似 EXTRA_LIBS = ….. -lcrypt 在最后加上 -liconv，例如:<br>EXTRA_LIBS = ….. -lcrypt -liconv 然后重新再次 make 即可。</p>
 
       
     </div>
@@ -429,7 +432,11 @@ google&amp;#x4E4B;&amp;#xFF0C;&amp;#x4EE5;&amp;#x6">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016-12-27/linux-php-error/" data-title="编译php出现 [sapi/cli/php] Error 1 解决办法" data-url="http://www.hugospi.com/2016-12-27/linux-php-error/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -631,30 +638,30 @@ google&amp;#x4E4B;&amp;#xFF0C;&amp;#x4EE5;&amp;#x6">
 
   
 
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"hugochan"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
 
 
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hugochan';
+      var disqus_identifier = '2016-12-27/linux-php-error/';
+      var disqus_title = "编译php出现 [sapi/cli/php] Error 1 解决办法";
+      var disqus_url = 'http://www.hugospi.com/2016-12-27/linux-php-error/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
 
 
 

@@ -84,16 +84,28 @@
 
 
 
-<meta name="description" content="&amp;#x6811;&amp;#x8393;&amp;#x6D3E;&amp;#x81EA;&amp;#x5E26;&amp;#x7684;vi&amp;#x7F16;&amp;#x8F91;&amp;#x5668;&amp;#x592A;&amp;#x96BE;&amp;#x7528;&amp;#x4E86;&amp;#xFF0C;&amp;#x4E0B;&amp;#x9762;&amp;#x7EAA;&amp;#x5F55;&amp;#x66F4;&amp;#x65B0;raspbian&amp;#x7CFB;&amp;#x7EDF;vi&amp;#x7684;&amp;#x6">
+<meta name="description" content="树莓派自带的vi编辑器太难用了，下面纪录更新raspbian系统vi的更新
+1.删除系统原来的vi编辑器1sudo apt-get remove vim-common
+2.安装新的vi1sudo apt-get install vim
+3.自定义vi编辑/etc/vim/vimrc文件，添加以下内容
+123456#显示行号set nu#语法高亮syntax on #tab 退四格set tabst">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树莓派－替换更新raspbian系统vim">
 <meta property="og:url" content="http://www.hugospi.com/2016-07-27/raspberryvim/index.html">
 <meta property="og:site_name" content="Hugo Chan">
-<meta property="og:description" content="&amp;#x6811;&amp;#x8393;&amp;#x6D3E;&amp;#x81EA;&amp;#x5E26;&amp;#x7684;vi&amp;#x7F16;&amp;#x8F91;&amp;#x5668;&amp;#x592A;&amp;#x96BE;&amp;#x7528;&amp;#x4E86;&amp;#xFF0C;&amp;#x4E0B;&amp;#x9762;&amp;#x7EAA;&amp;#x5F55;&amp;#x66F4;&amp;#x65B0;raspbian&amp;#x7CFB;&amp;#x7EDF;vi&amp;#x7684;&amp;#x6">
+<meta property="og:description" content="树莓派自带的vi编辑器太难用了，下面纪录更新raspbian系统vi的更新
+1.删除系统原来的vi编辑器1sudo apt-get remove vim-common
+2.安装新的vi1sudo apt-get install vim
+3.自定义vi编辑/etc/vim/vimrc文件，添加以下内容
+123456#显示行号set nu#语法高亮syntax on #tab 退四格set tabst">
 <meta property="og:updated_time" content="2016-07-27T02:58:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树莓派－替换更新raspbian系统vim">
-<meta name="twitter:description" content="&amp;#x6811;&amp;#x8393;&amp;#x6D3E;&amp;#x81EA;&amp;#x5E26;&amp;#x7684;vi&amp;#x7F16;&amp;#x8F91;&amp;#x5668;&amp;#x592A;&amp;#x96BE;&amp;#x7528;&amp;#x4E86;&amp;#xFF0C;&amp;#x4E0B;&amp;#x9762;&amp;#x7EAA;&amp;#x5F55;&amp;#x66F4;&amp;#x65B0;raspbian&amp;#x7CFB;&amp;#x7EDF;vi&amp;#x7684;&amp;#x6">
+<meta name="twitter:description" content="树莓派自带的vi编辑器太难用了，下面纪录更新raspbian系统vi的更新
+1.删除系统原来的vi编辑器1sudo apt-get remove vim-common
+2.安装新的vi1sudo apt-get install vim
+3.自定义vi编辑/etc/vim/vimrc文件，添加以下内容
+123456#显示行号set nu#语法高亮syntax on #tab 退四格set tabst">
 
 
 
@@ -322,7 +334,7 @@
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
                 <a href="/2016-07-27/raspberryvim/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-07-27/raspberryvim/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016-07-27/raspberryvim/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -354,11 +366,11 @@
       
 
       
-        <p>&#x6811;&#x8393;&#x6D3E;&#x81EA;&#x5E26;&#x7684;vi&#x7F16;&#x8F91;&#x5668;&#x592A;&#x96BE;&#x7528;&#x4E86;&#xFF0C;&#x4E0B;&#x9762;&#x7EAA;&#x5F55;&#x66F4;&#x65B0;raspbian&#x7CFB;&#x7EDF;vi&#x7684;&#x66F4;&#x65B0;</p>
-<p>1.&#x5220;&#x9664;&#x7CFB;&#x7EDF;&#x539F;&#x6765;&#x7684;vi&#x7F16;&#x8F91;&#x5668;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get remove vim-common</div></pre></td></tr></table></figure></p>
-<p>2.&#x5B89;&#x88C5;&#x65B0;&#x7684;vi<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install vim</div></pre></td></tr></table></figure></p>
-<p>3.&#x81EA;&#x5B9A;&#x4E49;vi<br>&#x7F16;&#x8F91;/etc/vim/vimrc&#x6587;&#x4EF6;&#xFF0C;&#x6DFB;&#x52A0;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#&#x663E;&#x793A;&#x884C;&#x53F7;</span></div><div class="line"><span class="built_in">set</span> nu</div><div class="line"><span class="comment">#&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;</span></div><div class="line">syntax on </div><div class="line"><span class="comment">#tab &#x9000;&#x56DB;&#x683C;</span></div><div class="line"><span class="built_in">set</span> tabstop=4</div></pre></td></tr></table></figure>
+        <p>树莓派自带的vi编辑器太难用了，下面纪录更新raspbian系统vi的更新</p>
+<p>1.删除系统原来的vi编辑器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get remove vim-common</div></pre></td></tr></table></figure></p>
+<p>2.安装新的vi<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install vim</div></pre></td></tr></table></figure></p>
+<p>3.自定义vi<br>编辑/etc/vim/vimrc文件，添加以下内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#显示行号</span></div><div class="line"><span class="built_in">set</span> nu</div><div class="line"><span class="comment">#语法高亮</span></div><div class="line">syntax on </div><div class="line"><span class="comment">#tab 退四格</span></div><div class="line"><span class="built_in">set</span> tabstop=4</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -426,7 +438,11 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016-07-27/raspberryvim/" data-title="树莓派－替换更新raspbian系统vim" data-url="http://www.hugospi.com/2016-07-27/raspberryvim/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -628,30 +644,30 @@
 
   
 
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"hugochan"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
 
 
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hugochan';
+      var disqus_identifier = '2016-07-27/raspberryvim/';
+      var disqus_title = "树莓派－替换更新raspbian系统vim";
+      var disqus_url = 'http://www.hugospi.com/2016-07-27/raspberryvim/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
 
 
 

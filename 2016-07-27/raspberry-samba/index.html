@@ -322,7 +322,7 @@
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
                 <a href="/2016-07-27/raspberry-samba/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-07-27/raspberry-samba/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016-07-27/raspberry-samba/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -354,14 +354,14 @@
       
 
       
-        <p>1.&#x51C6;&#x5907;&#x786C;&#x76D8;<br>ps:&#xFF08;&#x786C;&#x76D8;&#x6700;&#x597D;&#x7528;&#x5E26;&#x7535;&#x6E90;&#x7684;hub&#x8FDE;&#x63A5;&#xFF0C;&#x4E0D;&#x7136;&#x6811;&#x8393;&#x6D3E;&#x6709;&#x53EF;&#x80FD;&#x4F1A;&#x2026;&#xFF09;<br>&#x8FD9;&#x91CC;&#x9009;&#x62E9;&#x5C06;&#x786C;&#x76D8;&#x683C;&#x5F0F;&#x5316;&#x4E3A;ext4<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#&#x67E5;&#x770B;&#x786C;&#x76D8;</span></div><div class="line">sudo fdisk <span class="_">-l</span></div><div class="line"><span class="comment">#&#x5378;&#x8F7D;&#x786C;&#x76D8;</span></div><div class="line">sudo umount /dev/sda1</div><div class="line"><span class="comment">#&#x683C;&#x5F0F;&#x5316;</span></div><div class="line">sudo mkfs.ext4 /dev/sda1</div></pre></td></tr></table></figure></p>
+        <p>1.准备硬盘<br>ps:（硬盘最好用带电源的hub连接，不然树莓派有可能会…）<br>这里选择将硬盘格式化为ext4<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#查看硬盘</span></div><div class="line">sudo fdisk <span class="_">-l</span></div><div class="line"><span class="comment">#卸载硬盘</span></div><div class="line">sudo umount /dev/sda1</div><div class="line"><span class="comment">#格式化</span></div><div class="line">sudo mkfs.ext4 /dev/sda1</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<p>2.&#x6302;&#x8F7D;&#x786C;&#x76D8;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#&#x65B0;&#x5EFA;&#x6302;&#x8F7D;&#x76EE;&#x5F55;</span></div><div class="line">mkdir /home/pi/NAS</div><div class="line"><span class="comment">#&#x6302;&#x8F7D;&#x786C;&#x76D8;</span></div><div class="line">sudo mount /dev/sda1 /home/pi/NAS</div><div class="line"><span class="comment">#&#x8BBE;&#x7F6E;&#x6743;&#x9650;</span></div><div class="line">sudo chown pi:pi /home/pi/NAS</div></pre></td></tr></table></figure></p>
-<p>3.&#x5B89;&#x88C5;&#x914D;&#x7F6E;samba<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install samba samba-common-bin</div></pre></td></tr></table></figure></p>
-<p>&#x7F16;&#x8F91;&#x914D;&#x7F6E;&#x6587;&#x4EF6; sudo vi /etc/samba/smb.conf  (&#x5907;&#x4EFD;&#x6587;&#x4EF6;&#x662F;&#x4E2A;&#x597D;&#x4E60;&#x60EF;)<br>&#x6DFB;&#x52A0;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[share]</div><div class="line">    path = /home/pi/NAS  <span class="comment">#&#x5171;&#x4EAB;&#x8DEF;&#x5F84;</span></div><div class="line">    browseable = yes</div><div class="line">    writable = yes</div><div class="line">    create mask = 0664  <span class="comment">#&#x65B0;&#x5EFA;&#x6587;&#x4EF6;&#x6743;&#x9650;</span></div><div class="line">    directory mask = 0775  <span class="comment">#&#x65B0;&#x5EFA;&#x76EE;&#x5F55;&#x6743;&#x9650;</span></div></pre></td></tr></table></figure></p>
-<p>&#x8BBE;&#x7F6E;&#x5171;&#x4EAB;&#x7528;&#x6237;&#x5BC6;&#x7801;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo smbpasswd <span class="_">-a</span> pi</div></pre></td></tr></table></figure></p>
-<p>&#x8F93;&#x5165;&#x5BC6;&#x7801;<br>&#x91CD;&#x65B0;&#x542F;&#x52A8;samba&#x670D;&#x52A1;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /etc/init.d/samba restart</div></pre></td></tr></table></figure></p>
-<p>&#x8BBF;&#x95EE;&#x65B9;&#x6CD5;&#xFF1A;<br>windows&#x7528;&#x6237;&#x6309;win&#xFF0B;r&#x8C03;&#x51FA;&#x7A97;&#x53E3;&#x8F93;&#x5165; \\&#x6811;&#x8393;&#x6D3E;ip<br>mac&#x7528;&#x6237;&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x5668; smb://&#x6811;&#x8393;&#x6D3E;ip</p>
+<p>2.挂载硬盘<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#新建挂载目录</span></div><div class="line">mkdir /home/pi/NAS</div><div class="line"><span class="comment">#挂载硬盘</span></div><div class="line">sudo mount /dev/sda1 /home/pi/NAS</div><div class="line"><span class="comment">#设置权限</span></div><div class="line">sudo chown pi:pi /home/pi/NAS</div></pre></td></tr></table></figure></p>
+<p>3.安装配置samba<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install samba samba-common-bin</div></pre></td></tr></table></figure></p>
+<p>编辑配置文件 sudo vi /etc/samba/smb.conf  (备份文件是个好习惯)<br>添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[share]</div><div class="line">    path = /home/pi/NAS  <span class="comment">#共享路径</span></div><div class="line">    browseable = yes</div><div class="line">    writable = yes</div><div class="line">    create mask = 0664  <span class="comment">#新建文件权限</span></div><div class="line">    directory mask = 0775  <span class="comment">#新建目录权限</span></div></pre></td></tr></table></figure></p>
+<p>设置共享用户密码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo smbpasswd <span class="_">-a</span> pi</div></pre></td></tr></table></figure></p>
+<p>输入密码<br>重新启动samba服务<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /etc/init.d/samba restart</div></pre></td></tr></table></figure></p>
+<p>访问方法：<br>windows用户按win＋r调出窗口输入 \\树莓派ip<br>mac用户连接服务器 smb://树莓派ip</p>
 
       
     </div>
@@ -429,7 +429,11 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016-07-27/raspberry-samba/" data-title="树莓派－搭建家庭nas服务" data-url="http://www.hugospi.com/2016-07-27/raspberry-samba/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -631,30 +635,30 @@
 
   
 
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"hugochan"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
 
 
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hugochan';
+      var disqus_identifier = '2016-07-27/raspberry-samba/';
+      var disqus_title = "树莓派－搭建家庭nas服务";
+      var disqus_url = 'http://www.hugospi.com/2016-07-27/raspberry-samba/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
 
 
 
